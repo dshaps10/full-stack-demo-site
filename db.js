@@ -13,3 +13,12 @@ let productsSchema = mongoose.Schema({
   img: String,
   price: Number
 });
+
+// Define flight schema for travel demo site
+let flightsSchema = mongoose.Schema({
+  airline: String,
+  origin: String,
+  dest: String,
+  departureTime: Date,
+  arrivalTime: Date
+});
