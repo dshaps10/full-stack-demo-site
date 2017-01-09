@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-demo-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshaps10/full-stack-demo-site.git"
+  },
+  "author": "Dan Shapiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dshaps10/full-stack-demo-site/issues"
+  },
+  "homepage": "https://github.com/dshaps10/full-stack-demo-site#readme"
+}
