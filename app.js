@@ -4,6 +4,9 @@ const hbs = require('hbs');
 // instantiate Express.js
 const app = express();
 
+// Tell Handlebars where to look for partials
+hbs.registerPartials(__dirname +  '/views/partials');
+
 // Set Handlebars as default templating engine
 app.set('view engine', 'hbs');
 
@@ -14,4 +17,11 @@ app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page'
   });
+});
+
+// Specify port and run local server
+let port = 3000;
+
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
 });
