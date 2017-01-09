@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dshaps10/full-stack-demo-site#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "mongoose": "^4.7.6"
   }
 }
