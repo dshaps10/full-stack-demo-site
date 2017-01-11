@@ -19,6 +19,13 @@ app.get('/', (req, res) => {
   });
 });
 
+// route for e-commerce site
+app.get('/', (req, res) => {
+  res.render('shop.hbs', {
+    pageTitle: 'E-Commerce Shop'
+  });
+});
+
 // Specify port and run local server
 let port = 3000;
 
