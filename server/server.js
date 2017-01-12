@@ -29,9 +29,26 @@ app.get('/', (req, res) => {
   });
 });
 
+
+
+
+
 // route for e-commerce site
 app.get('/shop', (req, res) => {
-  res.render('shop.hbs', {
+  
+
+
+  let variationKey = optimizely.activate('LANDING_PAGE_UI', userId);
+  if (variationKey === 'variation_a') {
+    // execute code for variation_a
+  } else if (variationKey === 'variation_b') {
+    // execute code for variation_b
+  } else {
+    // execute default code
+  }
+
+
+  res.render('shop/home.hbs', {
     pageTitle: 'E-Commerce Shop'
   });
 });
