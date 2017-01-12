@@ -2,10 +2,12 @@
 const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
+const optimizely = require('optimizely-server-sdk');
 
 // local packages
 let {mongoose} = require('./db/mongoose');
 let {Product} = require('./models/products');
+let {datafile} = require('../datafile');
 
 // instantiate Express.js
 const app = express();
@@ -29,26 +31,11 @@ app.get('/', (req, res) => {
   });
 });
 
-
-
-
-
 // route for e-commerce site
 app.get('/shop', (req, res) => {
-  
 
 
-  let variationKey = optimizely.activate('LANDING_PAGE_UI', userId);
-  if (variationKey === 'variation_a') {
-    // execute code for variation_a
-  } else if (variationKey === 'variation_b') {
-    // execute code for variation_b
-  } else {
-    // execute default code
-  }
-
-
-  res.render('shop/home.hbs', {
+res.render('shop/home.hbs', {
     pageTitle: 'E-Commerce Shop'
   });
 });
