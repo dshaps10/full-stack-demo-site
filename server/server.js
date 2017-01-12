@@ -35,7 +35,8 @@ app.get('/', (req, res) => {
 app.get('/shop', (req, res) => {
 
 
-res.render('shop/home.hbs', {
+
+  res.render('shop/home.hbs', {
     pageTitle: 'E-Commerce Shop'
   });
 });
