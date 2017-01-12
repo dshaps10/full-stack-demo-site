@@ -1,5 +1,10 @@
+// npm dependencies
 const express = require('express');
 const hbs = require('hbs');
+
+// local packages
+let {mongoose} = require('./db/mongoose');
+let {Product} = require('./db/models/products');
 
 // instantiate Express.js
 const app = express();
