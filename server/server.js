@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const app = express();
 
 // Tell Handlebars where to look for partials
-hbs.registerPartials(__dirname +  '../views/partials');
+hbs.registerPartials(__dirname +  '../../views/partials');
 
 // Set Handlebars as default templating engine
 app.set('view engine', 'hbs');
