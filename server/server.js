@@ -7,8 +7,8 @@ const optimizely = require('optimizely-server-sdk');
 // local packages
 let {mongoose} = require('./db/mongoose');
 let {Product} = require('./models/products');
-let {datafile} = require('../datafile');
-let {uuid} = require('../helper_functions/guid');
+let {datafile} = require('../optimizely_landing_page_ui');
+let {uuid} = require('../helper_functions/uuid');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
