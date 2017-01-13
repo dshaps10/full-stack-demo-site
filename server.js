@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 const optimizely = require('optimizely-server-sdk');
 
 // local packages
-let {mongoose} = require('./db/mongoose');
-let {Product} = require('./models/products');
-let {datafile} = require('../optimizely_landing_page_ui');
-let {uuid} = require('../helper_functions/uuid');
+let {mongoose} = require('./server/db/mongoose');
+let {Product} = require('./server/models/products');
+let {datafile} = require('./optimizely_landing_page_ui');
+let {uuid} = require('./helper_functions/uuid');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
@@ -19,10 +19,13 @@ let optimizelyClient = optimizely.createInstance({
 const app = express();
 
 // Tell Handlebars where to look for partials
-hbs.registerPartials(__dirname +  '../../views/partials');
+hbs.registerPartials(__dirname +  '/views/partials');
 
 // Set Handlebars as default templating engine
 app.set('view engine', 'hbs');
+
+// points Express towars to views directory for easy rendering
+app.set('views', __dirname + '/views');
 
 // Point app towards stylesheets
 app.use(express.static(__dirname + '/public'));
@@ -46,19 +49,22 @@ app.get('/shop', (req, res) => {
   let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
 
   // decide which version of the UI to show based on the bucketed variation
-  if (variation === 'variation_a') {
-    res.render('shop/home.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  } else if (variation === 'variation_b') {
-    res.render('shop/home2.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  } else {
-    res.render('shop/home.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  }
+  // if (variation === 'variation_a') {
+  //   res.render('shop/home.hbs', {
+  //     pageTitle: 'E-Commerce Shop'
+  //   });
+  // } else if (variation === 'variation_b') {
+  //   res.render('shop/home2.hbs', {
+  //     pageTitle: 'E-Commerce Shop'
+  //   });
+  // } else {
+  //   res.render('shop/home.hbs', {
+  //     pageTitle: 'E-Commerce Shop'
+  //   });
+  // }
+  res.render('shop/home.hbs', {
+    pageTitle: 'E-Commerce Shop'
+  });
 
 });
 
