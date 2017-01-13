@@ -8,6 +8,12 @@ const optimizely = require('optimizely-server-sdk');
 let {mongoose} = require('./db/mongoose');
 let {Product} = require('./models/products');
 let {datafile} = require('../datafile');
+let {uuid} = require('../helper_functions/guid');
+
+// Initialize the Optimizely client
+let optimizelyClient = optimizely.createInstance({
+  datafile: datafile
+});
 
 // instantiate Express.js
 const app = express();
@@ -33,12 +39,27 @@ app.get('/', (req, res) => {
 
 // route for e-commerce site
 app.get('/shop', (req, res) => {
+  // generate random userID
+  userID = uuid();
 
+  // activate the Optimizely experiment
+  let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
 
+  // decide which version of the UI to show based on the bucketed variation
+  if (variation === 'variation_a') {
+    res.render('shop/home.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  } else if (variation === 'variation_b') {
+    res.render('shop/home2.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  } else {
+    res.render('shop/home.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  }
 
-  res.render('shop/home.hbs', {
-    pageTitle: 'E-Commerce Shop'
-  });
 });
 
 // API endpoint for seeding product data

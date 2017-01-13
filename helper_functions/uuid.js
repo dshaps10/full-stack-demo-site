@@ -9,3 +9,5 @@ let guid = () => {
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
   s4() + '-' + s4() + s4() + s4();
 }
+
+module.exports = {guid};
