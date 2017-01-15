@@ -21,3 +21,8 @@
   color: red;
   font-family: Copperplate;
 }
+
+.product {
+  border: 2px solid black;
+  margin: 20px;
+}

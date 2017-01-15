@@ -89,7 +89,9 @@ app.post('/shop/products', (req, res) => {
 app.get('/shop/products', (req, res) => {
   Product.find()
     .then((products) => {
-      res.send(products);
+      res.render('shop/products.hbs', {
+        productArray: products
+      });
     }, (e) => {
       rest.send('Could not retrieve products');
     });

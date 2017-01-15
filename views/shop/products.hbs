@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/shop.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>{{pageTitle}}</title>
+  </head>
+	<body>
+    <div class="jumbotron title" style="background-color: white;">
+      <h1>Resin & Steel Bikes and Gear</h1>
+    </div>
+    <div class="container shop-body">
+      {{#each productArray}}
+      <div class="product">
+        <h2>{{title}}</h2>
+        <h3>{{description}}</h3>
+        <p>${{price}}</p>
+      </div>
+      {{/each}}
+    </div>
+	</body>
+</html>
