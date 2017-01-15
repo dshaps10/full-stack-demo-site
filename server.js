@@ -42,29 +42,29 @@ app.get('/', (req, res) => {
 
 // route for e-commerce site
 app.get('/shop', (req, res) => {
-  // // generate random userID
-  // let userID = uuid();
-  //
-  // // activate the Optimizely experiment
-  // let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
-  //
-  // // decide which version of the UI to show based on the bucketed variation
-  // if (variation === 'variation_a') {
-  //   res.render('shop/home.hbs', {
-  //     pageTitle: 'E-Commerce Shop'
-  //   });
-  // } else if (variation === 'variation_b') {
-  //   res.render('shop/home2.hbs', {
-  //     pageTitle: 'E-Commerce Shop'
-  //   });
-  // } else {
-  //   res.render('shop/home.hbs', {
-  //     pageTitle: 'E-Commerce Shop'
-  //   });
-  // }
-  res.render('shop/home.hbs', {
-    pageTitle: 'E-Commerce Shop'
-  });
+  // generate random userID
+  let userID = uuid();
+
+  // activate the Optimizely experiment
+  let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
+
+  // decide which version of the UI to show based on the bucketed variation
+  if (variation === 'variation_a') {
+    res.render('shop/home.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  } else if (variation === 'variation_b') {
+    res.render('shop/home2.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  } else {
+    res.render('shop/home.hbs', {
+      pageTitle: 'E-Commerce Shop'
+    });
+  }
+  // res.render('shop/home.hbs', {
+  //   pageTitle: 'E-Commerce Shop'
+  // });
 
   // optimizelyClient.track('sample_conversion', userID)
 
@@ -86,6 +86,7 @@ app.post('/shop/products', (req, res) => {
     });
 })
 
+// route for retrieving product results
 app.get('/shop/products', (req, res) => {
   Product.find()
     .then((products) => {
