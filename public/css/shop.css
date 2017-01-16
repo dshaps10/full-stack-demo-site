@@ -1,7 +1,3 @@
-* {
-  border: 1px dotted black;
-}
-
 .title {
   text-align: center;
   color: #cc7a00;
@@ -18,7 +14,9 @@
 }
 
 .shop-body {
+  font-family: Copperplate;
   text-align: center;
+  color: #cc7a00;
 }
 
 .btn {
@@ -27,6 +25,8 @@
 }
 
 .product {
-  border: 2px solid black;
-  margin: 20px;
+  border: 2px solid #cc7a00;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
 }
