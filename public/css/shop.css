@@ -24,9 +24,21 @@
   font-family: Copperplate;
 }
 
+/*Styles below specific to 'products.hbs' file*/
+.results-hero-image{
+  background-image: url('http://www.harley-davidson.com/content/dam/h-d/images/motorcycles/my15/dom/bb-road-glide-reveal.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  color: white;
+  font-family: Copperplate;
+  text-align: center;
+}
+
 .product {
   border: 2px solid #cc7a00;
-  width: 50%;
+  width: 75%;
   margin: auto;
   margin-bottom: 30px;
 }
