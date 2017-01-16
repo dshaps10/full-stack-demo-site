@@ -19,6 +19,9 @@ As of the most updated version of this ReadMe, there is no live, deployed versio
 ##Technology Used
 This suite is built exclusively in Node.js.  This seemed a good choice given the ubiquity of JavaScript, but I would encourage you to port this to another language if you so choose.  I used MongoDB as a database, Mongoose as an ORM, and Handlebars as a templating engine.  For a full list of dependencies please see the ```package.json``` file.
 
+##Seeding data
+There is an API endpoint at ```/shop/products``` where you can post data to MongoDB. I've provided a JSON file called ```seeds.json``` where you copy the array of data.  Everything is already formatted per the Mongoose model. I recommend using a tool like Postman to paste in the array of data and POST it to ```/shop/products```. I'll work to better automate this process, but this is a good method for the time being.
+
 ##Future Plans
 As I continue to iterate over this demo suite, I will add more verticals in the form of additional micro-sites.  The current backlog is as follows:
 * Travel micro-site
