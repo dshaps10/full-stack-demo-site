@@ -12,7 +12,6 @@ let Product = mongoose.model('Product', {
   },
   description: {
     type: String,
-    required: true,
     minlength: 10,
     trim: true
   },
