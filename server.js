@@ -66,7 +66,7 @@ app.get('/shop', (req, res) => {
   //   pageTitle: 'E-Commerce Shop'
   // });
 
-  // optimizelyClient.track('sample_conversion', userID)
+  optimizelyClient.track('sample_conversion', userID)
 
 });
 
@@ -88,14 +88,50 @@ app.post('/shop/products', (req, res) => {
 
 // route for retrieving product results
 app.get('/shop/products', (req, res) => {
-  Product.find()
-    .then((products) => {
-      res.render('shop/products.hbs', {
-        productArray: products
+  // generate random userID
+  let userID = uuid();
+
+  // Activate Optimizely experiment
+  let variation = optimizelyClient.activate("SEARCH_RESULT_SORTING_EXPERIMENT", userID);
+
+  // determine how results should be displayed based on user variation
+  if (variation === 'results_a') {
+    Product.find()
+      .then((products) => {
+        res.render('shop/products.hbs', {
+          productArray: products
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
       });
-    }, (e) => {
-      rest.send('Could not retrieve products');
-    });
+  } else if (variation === 'results_b') {
+    Product.find().sort({"price":-1})
+      .then((products) => {
+        res.render('shop/products.hbs', {
+          productArray: products
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
+      });
+  } else {
+    Product.find()
+      .then((products) => {
+        res.render('shop/products.hbs', {
+          productArray: products
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
+      });
+  }
+
+  // Product.find()
+  //   .then((products) => {
+  //     res.render('shop/products.hbs', {
+  //       productArray: products
+  //     });
+  //   }, (e) => {
+  //     res.send('Could not retrieve products');
+  //   });
 });
 
 // Specify port and run local server
