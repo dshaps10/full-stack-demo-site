@@ -42,3 +42,27 @@
   margin: auto;
   margin-bottom: 30px;
 }
+
+/*Styles below specific to 'product_details.hbs' file*/
+.product-details {
+  font-family: Copperplate;
+  color: #cc7a00;
+  padding-top: 75px;
+}
+
+.img {
+  height: 500px;
+  border-radius: 10px;
+}
+
+.add-to-cart {
+  background: none;
+  border: 2px solid #cc7a00;
+  font-size: 1.5em;
+  color: #cc7a00;
+  font-family: Copperplate;
+}
+
+
+
+

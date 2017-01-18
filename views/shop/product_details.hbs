@@ -8,9 +8,25 @@
     <title>{{pageTitle}}</title>
   </head>
 	<body>
-		<h1>Product Details</h1>
-    <h2>{{title}}</h2>
-    <h3>{{description}}</h3>
-    <h4>${{price}}</h4>
+    <div class="jumbotron title" style="background-color: white;">
+      <h1>Resin & Steel Bikes and Gear</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="img" style="background-image: url('http://www.motorcyclelegalfoundation.com/wp-content/uploads/2013/07/Moto_Guzzi_Italian_motorcycle.jpg'); background-size: cover; background-position: center;">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="product-details">
+          <h1>{{title}}</h1>
+          <h3>{{description}}</h3>
+          <h4>${{price}}</h4>
+        </div>
+        <br />
+        <a href="#">
+          <button type="button" class="add-to-cart">Purchase Now</button>
+        </a>
+      </div>
+    </div>
 	</body>
 </html>
