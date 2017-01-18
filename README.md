@@ -19,8 +19,11 @@ As of the most updated version of this ReadMe, there is no live, deployed versio
 ##Technology Used
 This suite is built exclusively in Node.js.  This seemed a good choice given the ubiquity of JavaScript, but I would encourage you to port this to another language if you so choose.  I used MongoDB as a database, Mongoose as an ORM, and Handlebars as a templating engine.  For a full list of dependencies please see the ```package.json``` file.
 
-##Seeding data
+##Seeding Data
 Use the file, ```seed.js```, to insert several documents into the Product collection in MongoDB. I've provided a default array of products, but this can be changed easily.  I've also provided an API endpoint at ```shop/products``` if you want to manually insert documents into the database. use a client like Postman to make the POST request to this endpoint.
+
+##Notes on Code Style
+You'll notice I didn't abstract much of ```server.js``` away into functions.  While this would make the code cleaner, I wanted most of the logic to be in one place in order to make the demo flow a bit smoother. If there is enough demand, I can abstract away much of this logic into separate modules.
 
 ##Future Plans
 As I continue to iterate over this demo suite, I will add more verticals in the form of additional micro-sites.  The current backlog is as follows:
