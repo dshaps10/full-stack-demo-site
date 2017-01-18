@@ -26,7 +26,7 @@ let products = [
     "price": "2000"
   }, {
     "title": "2011 Moto Guzzi",
-    "descripton": "This bike was ridden very lightly and is ready to be taken out on the road again",
+    "description": "This bike was ridden very lightly and is ready to be taken out on the road again",
     "price": "12000"
   }, {
     "title": "2002 Triumph",

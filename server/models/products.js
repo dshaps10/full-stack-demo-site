@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 // defines Product model
 // contains 3 fields (title, description, and price)
 let Product = mongoose.model('Product', {
+  img: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
