@@ -9,6 +9,7 @@ let {mongoose} = require('./server/db/mongoose');
 let {Product} = require('./server/models/products');
 let {datafile} = require('./optimizely_landing_page_ui');
 let {uuid} = require('./helper_functions/uuid');
+let {priceDiscount} = require('./helper_functions/price_discount');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
