@@ -135,6 +135,12 @@ app.get('/shop/products', (req, res) => {
   //   });
 });
 
+app.get('/shop/product_details', (req, res) => {
+  res.render('shop/product_details', {
+    pageTitle: 'Product Details"'
+  });
+});
+
 // Specify port and run local server
 let port = 3000;
 
