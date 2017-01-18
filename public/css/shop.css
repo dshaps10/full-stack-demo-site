@@ -55,6 +55,11 @@
   border-radius: 10px;
 }
 
+.price-and-checkout {
+  font-family: Copperplate;
+  color: #cc7a00;
+}
+
 .add-to-cart {
   background: none;
   border: 2px solid #cc7a00;
