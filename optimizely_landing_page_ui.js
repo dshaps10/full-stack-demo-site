@@ -57,12 +57,40 @@ endOfRange: 10000
 }
 ],
 forcedVariations: { }
+},
+{
+status: "Running",
+audienceIds: [ ],
+variations: [
+{
+id: "8172452161",
+key: "original_price"
+},
+{
+id: "8176211878",
+key: "discounted_price"
+}
+],
+id: "8176471235",
+key: "PRICE_TEST",
+layerId: "8175460572",
+trafficAllocation: [
+{
+entityId: "8172452161",
+endOfRange: 5000
+},
+{
+entityId: "8176211878",
+endOfRange: 10000
+}
+],
+forcedVariations: { }
 }
 ],
 audiences: [ ],
 groups: [ ],
 attributes: [ ],
-revision: "5",
+revision: "7",
 events: [ ],
 accountId: "6763041371"
 }
