@@ -138,16 +138,51 @@ app.get('/shop/products', (req, res) => {
 
 app.get('/shop/products/:id', (req, res) => {
   let id = req.params.id;
-  Product.find({_id: ObjectID(id)})
-    .then((product) => {
-      res.render('shop/product_details.hbs', {
-        title: product[0].title,
-        description: product[0].description,
-        price: product[0].price,
+
+  // generate random userID
+  let userID = uuid();
+
+  // Activate Optimizely experiment
+  let variation = optimizelyClient.activate("PRICE_TEST", userID);
+  console.log(variation);
+
+  // determine how results should be displayed based on user variation
+  if (variation === 'original_price') {
+    Product.find({_id: ObjectID(id)})
+      .then((product) => {
+        res.render('shop/product_details.hbs', {
+          title: product[0].title,
+          description: product[0].description,
+          price: product[0].price
+        });
+      }, (e) => {
+        res.send('Could not retrieve product ', e);
       });
-    }, (e) => {
-      res.send('Could not retrieve product ', e);
-    });
+  } else if (variation === 'discounted_price') {
+    Product.find({_id: ObjectID(id)})
+      .then((product) => {
+        res.render('shop/product_details.hbs', {
+          title: product[0].title,
+          description: product[0].description,
+          price: priceDiscount(product[0].price) // Run price through the priceDiscount function
+        });
+      }, (e) => {
+        res.send('Could not retrieve product ', e);
+      });
+  } else {
+    Product.find({_id: ObjectID(id)})
+      .then((product) => {
+        res.render('shop/product_details.hbs', {
+          title: product[0].title,
+          description: product[0].description,
+          price: product[0].price
+        });
+      }, (e) => {
+        res.send('Could not retrieve product ', e);
+      });
+  }
+
+
 });
 
 // Specify port and run local server
