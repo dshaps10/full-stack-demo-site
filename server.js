@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const optimizely = require('optimizely-server-sdk');
+const ObjectID = require('mongodb').ObjectID;
 
 // local packages
 let {mongoose} = require('./server/db/mongoose');
@@ -135,10 +136,18 @@ app.get('/shop/products', (req, res) => {
   //   });
 });
 
-app.get('/shop/product_details', (req, res) => {
-  res.render('shop/product_details', {
-    pageTitle: 'Product Details"'
-  });
+app.get('/shop/products/:id', (req, res) => {
+  let id = req.params.id;
+  Product.find({_id: ObjectID(id)})
+    .then((product) => {
+      res.render('shop/product_details.hbs', {
+        title: product[0].title,
+        description: product[0].description,
+        price: product[0].price,
+      });
+    }, (e) => {
+      res.send('Could not retrieve product ', e);
+    });
 });
 
 // Specify port and run local server
