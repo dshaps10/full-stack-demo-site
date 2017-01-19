@@ -2,23 +2,10 @@
 const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
-const optimizely = require('optimizely-server-sdk');
-const ObjectID = require('mongodb').ObjectID;
-
-// local packages
-let {mongoose} = require('./db/mongoose');
-let {Product} = require('./models/products');
-let {datafile} = require('./optly_datafile');
-let {uuid} = require('./helpers/uuid');
-let {priceDiscount} = require('./helpers/price_discount');
 
 // import controllers
 let {shop} = require('./controllers/shop');
-
-// Initialize the Optimizely client
-let optimizelyClient = optimizely.createInstance({
-  datafile: datafile
-});
+let {travel} = require('./controllers/travel');
 
 // instantiate Express.js
 const app = express();
@@ -38,7 +25,9 @@ app.use(express.static(__dirname + '/public'));
 // Allows for JSON-formatted POST requests
 app.use(bodyParser.json());
 
+// Express middleware enabling separate controllers
 app.use('/', shop);
+app.use('/', travel);
 
 // root route
 app.get('/', (req, res) => {
