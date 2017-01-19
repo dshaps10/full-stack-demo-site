@@ -6,11 +6,11 @@ const optimizely = require('optimizely-server-sdk');
 const ObjectID = require('mongodb').ObjectID;
 
 // local packages
-let {mongoose} = require('./server/db/mongoose');
-let {Product} = require('./server/models/products');
+let {mongoose} = require('./db/mongoose');
+let {Product} = require('./models/products');
 let {datafile} = require('./optimizely_landing_page_ui');
-let {uuid} = require('./helper_functions/uuid');
-let {priceDiscount} = require('./helper_functions/price_discount');
+let {uuid} = require('./helpers/uuid');
+let {priceDiscount} = require('./helpers/price_discount');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
