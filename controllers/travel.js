@@ -37,14 +37,41 @@ travel.use(bodyParser.json());
 
 // Routes for travel site
 travel.get('/travel', (req, res) => {
-	Destination.find()
-		.then((destinations) => {
-			res.render('travel/home.hbs', {
-				destinationArray: destinations.slice(0,3)
+	// Generate random userID
+	let userID = uuid();
+
+	// Activate Optimizely experiment
+	let variation = optimizelyClient.activate('TOP_DESTINATIONS_EXPERIMENT', userID)
+
+	//  Determine how Top Destinatinos should be displayed based on user variation
+	if (variation === 'results_a') {
+		Destination.find()
+			.then((destinations) => {
+				res.render('travel/home.hbs', {
+					destinationArray: destinations.slice(0,3)
+				});
+			}, (e) => {
+				res.send('Could not retrieve destinations');
 			});
-		}, (e) => {
-			res.send('Could not retrieve destinations');
-		});
+	} else if (variation === 'results_b') {
+		Destination.find().sort({"rate": -1})
+			.then((destinations) => {
+				res.render('travel/home.hbs', {
+					destinationArray: destinations.slice(0,3)
+				});
+			}, (e) => {
+				res.send('Could not retrieve destinations');
+			});
+	} else {
+		Destination.find()
+			.then((destinations) => {
+				res.render('travel/home.hbs', {
+					destinationArray: destinations.slice(0,3)
+				});
+			}, (e) => {
+				res.send('Could not retrieve destinations');
+			});
+	}
 });
 
 module.exports = {
