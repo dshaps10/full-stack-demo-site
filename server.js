@@ -151,6 +151,7 @@ app.get('/shop/products/:id', (req, res) => {
     Product.find({_id: ObjectID(id)})
       .then((product) => {
         res.render('shop/product_details.hbs', {
+          img: product[0].img,
           title: product[0].title,
           description: product[0].description,
           price: product[0].price
@@ -162,6 +163,7 @@ app.get('/shop/products/:id', (req, res) => {
     Product.find({_id: ObjectID(id)})
       .then((product) => {
         res.render('shop/product_details.hbs', {
+          img: product[0].img,
           title: product[0].title,
           description: product[0].description,
           price: priceDiscount(product[0].price) // Run price through the priceDiscount function
@@ -173,6 +175,7 @@ app.get('/shop/products/:id', (req, res) => {
     Product.find({_id: ObjectID(id)})
       .then((product) => {
         res.render('shop/product_details.hbs', {
+          img: product[0].img,
           title: product[0].title,
           description: product[0].description,
           price: product[0].price

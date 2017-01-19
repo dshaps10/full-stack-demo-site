@@ -2,14 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/stylesheets/app.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/shop.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
   </head>
-	<body>
-    <div class="jumbotron">
-      <h1>Welcome to the Full Stack demo site!</h1>
+  <body>
+    <div class="jumbotron" style="background-color: #cc7a00; color: white;">
+      <h1>Full Stack Demo Suite</h1>
     </div>
-	</body>
+    <div class="container summary">
+      <h2 style="text-align: center;">About the Demo Suite</h2><br />
+      <h4>From this page you can navigate to several different "micro-sites" that each pertain to a popular Optimizely vertical.  Each of these micro-sites are running multiple Optimizely Full Stack Experiments. Use these sites with customers and/or developers to show them Full Stack in action.</h4>
+    </div><br />
+    <h2 style="text-align: center;">Available Micro-Sites</h2><br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 micro-site-link">
+          <a href="shop/" style="text-decoration: none;">
+            <h3 class="micro-site-title">E-Commerce</h3>
+          </a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5 micro-site-link">
+          <a href="#" style="text-decoration: none;">
+            <h3 class="micro-site-title">B2B (Coming Soon)</h3>
+          </a>
+        </div>  
+      </div>
+    </div>
+  </body>
 </html>

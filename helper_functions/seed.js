@@ -5,10 +5,12 @@ let {mongoose} = require('../server/db/mongoose');
 // collection of documents pertaining to Product models
 let products = [
   {
+    "img": "http://www.motorcycle-usa.com/wp-content/uploads/2016/09/H-D-FatBoyLo-2016.jpg?378220",
     "title": "1968 Harley Davidson",
     "description": "An oldie but a goodie!",
     "price": "10000"
   }, {
+    "img": "http://www.totalmotorcycle.com/motorcycles/2012models/2012-Triumph-Thruxton6.jpg",
     "title": "2006 Triumph",
     "description": "A new riff on a classic with some stylish looks",
     "price": "6000"
