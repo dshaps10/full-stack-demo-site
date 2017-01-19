@@ -15,11 +15,6 @@ let {priceDiscount} = require('./helpers/price_discount');
 // import controllers
 let {shop} = require('./controllers/shop');
 
-// Initialize the Optimizely client
-let optimizelyClient = optimizely.createInstance({
-  datafile: datafile
-});
-
 // instantiate Express.js
 const app = express();
 
