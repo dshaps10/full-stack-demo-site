@@ -8,7 +8,7 @@ const ObjectID = require('mongodb').ObjectID;
 // local packages
 let {mongoose} = require('./../db/mongoose');
 let {Product} = require('./../models/products');
-let {datafile} = require('./../optly_datafile');
+let {datafile} = require('./../optly_shop_datafile');
 let {uuid} = require('./../helpers/uuid');
 let {priceDiscount} = require('./../helpers/price_discount');
 
