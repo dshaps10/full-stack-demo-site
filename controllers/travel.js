@@ -40,7 +40,7 @@ travel.get('/travel', (req, res) => {
 	Destination.find()
 		.then((destinations) => {
 			res.render('travel/home.hbs', {
-				destinationArray: destinations
+				destinationArray: destinations.slice(0,3)
 			});
 		}, (e) => {
 			res.send('Could not retrieve destinations');
