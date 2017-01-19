@@ -1,17 +1,21 @@
 /*Styles below specific to Demo Suite landing page*/
 .micro-site-link {
-  border: 2px solid #cc7a00;
-  border-radius: 5px;
-  text-align: center;
-  height: 100px;
-  transition: background-color 0.4s;
+	border: 2px solid #0081ba;
+	border-radius: 5px;
+	text-align: center;
+	height: 100px;
+	transition: background-color 0.4s;
 }
 
 .micro-site-link:hover {
-  background-color: #cc7a00;
+	background-color: #0081ba;
 }
 
 .micro-site-title {
-  padding-top: 7%;
-  color: black;
+	padding-top: 7%;
+	color: black;
+}
+
+a {
+	width: 100%;
 }
