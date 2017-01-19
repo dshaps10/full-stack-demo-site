@@ -16,6 +16,23 @@
 	color: black;
 }
 
+
 a {
-	width: 100%;
+	display: block;
+	border: 2px solid #0081ba;
+	margin-top: 20px;
+	text-decoration: none;
+	color: #0081ba;
+	transition: 0.4s background-color, 0.4s color;
+	height: 50px;
+	font-size: 1.5em;
+	text-align: center;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:hover {
+	background-color: #0081ba;
+	text-decoration: none;
 }
