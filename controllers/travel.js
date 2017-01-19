@@ -37,7 +37,9 @@ travel.use(bodyParser.json());
 
 // Routes for travel site
 travel.get('/travel', (req, res) => {
-	res.send("Welcome to the travel site");
+	res.render('travel/home.hbs', {
+		pageTitle: 'Paradiso Travel'
+	});
 });
 
 module.exports = {
