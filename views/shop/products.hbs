@@ -30,13 +30,13 @@
     </div>
     <div class="container shop-body">
       {{#each productArray}}
-      <a href="/shop/products/{{_id}}">
-        <div class="product">
-          <h2>{{title}}</h2>
-          <h3>{{description}}</h3>
-          <!-- <p>${{price}}</p> -->
+        <div class="product" style=>
+          <a href="/shop/products/{{_id}}">
+            <h2 style="color: black;">{{title}}</h2>
+            <h3 style="color: black;">{{description}}</h3>
+            <!-- <p>${{price}}</p> -->
+          </a>
         </div>
-      </a>
       {{/each}}
     </div>
 	</body>

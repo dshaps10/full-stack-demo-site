@@ -38,9 +38,23 @@
 
 .product {
   border: 2px solid #cc7a00;
+  border-radius: 5px;
   width: 75%;
   margin: auto;
   margin-bottom: 30px;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  vertical-align: middle;
+  transition: 0.4s background-color;
+}
+
+.product:hover {
+  background-color: #cc7a00;
+}
+
+.product:hover > a {
+  text-decoration: none;
 }
 
 /*Styles below specific to 'product_details.hbs' file*/
