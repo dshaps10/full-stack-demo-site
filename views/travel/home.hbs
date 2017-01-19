@@ -31,6 +31,17 @@
       <p><img src="/imgs/check_mark.png" height="40px" width="40px">Search for your <b>perfect</b> destination</p>
       <p><img src="/imgs/check_mark.png" height="40px" width="40px">View top travel deals <b>specially curated</b> for you</p>
       <p><img src="/imgs/check_mark.png" height="40px" width="40px">Book your trip through our <b>fast, secure</b> portal</p>
+    </div><br />
+    <div class="top-destinations">
+      <h2>Top Destinations</h2>
+      {{#each destinationArray}}
+      <div class="col-md-3 destination">
+        <a href="/travel/products/{{_id}}">
+          <div class="img" style="background-image: url('http://cdn-media-1.lifehack.org/wp-content/files/2015/11/17184258/tropical-paradise-4-wallpaper-1080p-HD.jpg'); background-size: cover; background-position: center;"></div>
+        </a>
+        <h3>{{title}}</h3>
+      </div>
+      {{/each}}
     </div>
   </body>
 </html>

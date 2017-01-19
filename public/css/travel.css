@@ -57,3 +57,22 @@ input[type=text]:focus {
 	display: inline-block;
 	margin: 20px;
 }
+
+.top-destinations {
+	text-align: center;
+}
+
+.destination {
+	display: inline-block;
+	margin: 40px;
+}
+
+.img {
+	height: 250px;
+	border-radius: 10px;
+}
+
+
+
+
+

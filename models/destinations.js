@@ -17,7 +17,7 @@ let Destination = mongoose.model('Destination', {
 		minlength: 10,
 		trim: true
 	},
-	fare: {
+	rate: {
 		type: Number,
 		default: null
 	}

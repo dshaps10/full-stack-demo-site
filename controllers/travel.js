@@ -14,7 +14,7 @@ let {priceDiscount} = require('./../helpers/price_discount');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
-  datafile: datafile
+	datafile: datafile
 });
 
 // instantiate Express.js
@@ -37,9 +37,14 @@ travel.use(bodyParser.json());
 
 // Routes for travel site
 travel.get('/travel', (req, res) => {
-	res.render('travel/home.hbs', {
-		pageTitle: 'Paradiso Travel'
-	});
+	Destination.find()
+		.then((destinations) => {
+			res.render('travel/home.hbs', {
+				destinationArray: destinations
+			});
+		}, (e) => {
+			res.send('Could not retrieve destinations');
+		});
 });
 
 module.exports = {

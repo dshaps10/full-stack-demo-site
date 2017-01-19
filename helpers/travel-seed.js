@@ -20,10 +20,9 @@ let destinations = [
 ];
 
 // Clears out the existing database, then re-seeds with above collection
-Product.insertMany(products)
+Destination.insertMany(destinations)
   .then((docs) => {
-    console.log(docs);
+    return console.log(docs);
   }, (e) => {
-    console.log('Unable to seed data', e);
-  })
-  .end();
+    return console.log('Unable to seed data', e);
+  });
