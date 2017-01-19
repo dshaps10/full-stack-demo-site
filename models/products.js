@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // defines Product model
 // contains 3 fields (title, description, and price)
 let Product = mongoose.model('Product', {
-  img: {
+  img: { 
     type: String,
   },
   title: {
@@ -26,4 +26,4 @@ let Product = mongoose.model('Product', {
 
 module.exports = {
   Product
-}
+};
