@@ -31,9 +31,10 @@
     <div class="container shop-body">
       {{#each productArray}}
       <div class="product">
-        <a href="/shop/products/{{_id}}">
+        <a href="/shop/products/{{_id}}" class="product-detail">
+          <div class="img" style="background-image: url({{img}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
           <h2 style="color: black;">{{title}}</h2>
-          <h3 style="color: black;">{{description}}</h3>
+          <h3 style="color: black;">${{price}}</h3>
           <!-- <p>${{price}}</p> -->
         </a>
       </div>

@@ -57,6 +57,10 @@
   text-decoration: none;
 }
 
+.product-listing {
+  display: inline-block;
+}
+
 /*Styles below specific to 'product_details.hbs' file*/
 .product-details {
   font-family: Copperplate;
