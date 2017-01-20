@@ -1,3 +1,5 @@
 module.exports.searchToUpperCase = (string) => {
-	return string.charAt(0).toUpperCase() + string.slice(1);
-};
+    return string.replace(/\w\S*/g, (txt) => {
+    	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
