@@ -11,6 +11,7 @@ let {Destination} = require('./../models/destinations');
 let {datafile} = require('./../optly_travel_datafile');
 let {uuid} = require('./../helpers/uuid');
 let {priceDiscount} = require('./../helpers/price_discount');
+let {searchToUpperCase} = require('./../helpers/searchToUpperCase');
 
 // Initialize the Optimizely client
 let optimizelyClient = optimizely.createInstance({
@@ -74,6 +75,23 @@ travel.get('/travel', (req, res) => {
 	}
 });
 
+travel.get('/travel/destinations', (req, res) => {
+	let search = searchToUpperCase(req.query.search);
+	console.log(search);
+	Destination.find({"title": search})
+		.then((destinations) => {
+			res.send(destinations);
+		}, (e) => {
+			res.send('Could not find matching destinations');
+		});
+});
+
 module.exports = {
 	travel
-}
+};
+
+
+
+
+
+

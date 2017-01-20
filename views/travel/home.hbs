@@ -23,8 +23,9 @@
     </nav>
     <div class="jumbotron" style="background-image: url('https://knowledgestew.com/wp-content/uploads/2016/03/Airplane-window.jpg'); background-size: cover; background-position: center;">
       <h1 style="font-family: cursive; font-size: 7em; color: white;">Paradiso Travel</h1>
-      <form>
-        <input type="text" name="search" placeholder="Search for a Destination">
+      <form method="get", action="/travel/destinations">
+        <input type="text" name="search" placeholder="Search for a Destination"><br /><br />
+        <input type="submit" value="Search">
       </form>
     </div>
     <div class="steps">
