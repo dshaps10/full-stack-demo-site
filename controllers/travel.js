@@ -77,10 +77,11 @@ travel.get('/travel', (req, res) => {
 
 travel.get('/travel/destinations', (req, res) => {
 	let search = searchToUpperCase(req.query.search);
-	console.log(search);
-	Destination.find({"title": search})
+	Destination.find({"country": search})
 		.then((destinations) => {
-			res.send(destinations);
+			res.render('travel/destination_listing', {
+				destinationArray: destinations
+			})
 		}, (e) => {
 			res.send('Could not find matching destinations');
 		});
