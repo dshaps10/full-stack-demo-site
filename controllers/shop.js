@@ -21,7 +21,7 @@ let optimizelyClient = optimizely.createInstance({
 const shop = express();
 
 // Tell Handlebars where to look for partials
-hbs.registerPartials(__dirname +  './../views/partials');
+hbs.registerPartials(__dirname +  '../views/partials');
 
 // Set Handlebars as default templating engine
 shop.set('view engine', 'hbs');
