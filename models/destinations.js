@@ -13,15 +13,15 @@ let Destination = mongoose.model('Destination', {
 	},
 	state: {
 		type: String,
-	}
+	},
 	country: {
 		type: String,
-		required: true,
+		required: true
 	},
 	continent: {
-		string: String,
+		type: String,
 		required: true
-	}
+	},
 	description: {
 		type: String,
 		minlength: 10
