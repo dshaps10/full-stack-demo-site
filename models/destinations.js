@@ -9,13 +9,22 @@ let Destination = mongoose.model('Destination', {
 	title: {
 		type: String,
 		required: true,
-		minlength: 5,
-		trim: true
+		minlength: 5
 	},
+	state: {
+		type: String,
+	}
+	country: {
+		type: String,
+		required: true,
+	},
+	continent: {
+		string: String,
+		required: true
+	}
 	description: {
 		type: String,
-		minlength: 10,
-		trim: true
+		minlength: 10
 	},
 	rate: {
 		type: Number,
