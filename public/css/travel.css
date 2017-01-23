@@ -68,7 +68,15 @@ input[type=text]:focus {
 
 .destination {
 	display: inline-block;
-	margin: 40px;
+	margin: 35px;
+	padding-right: 10px;
+	transition: 0.4s background-color;
+	color: black;
+	border-radius: 10px;
+}
+
+.destination:hover {
+	background-color: #e6e6e6;
 }
 
 .img {

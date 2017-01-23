@@ -28,17 +28,17 @@
     <div class="container">
       <h2>Search results for "{{query}}"</h2><br /><br />
       {{#each destinationArray}}
-      <a href="/travel/destinations/{{_id}}" style="text-decoration: none;">
+      <a href="/travel/destinations/{{_id}}" style="text-decoration: none;" class="destination">
         <div class="row">
           <div class="col-md-4 img" style="background-image: url({{img}}); background-size: cover; background-position: center; background-repeat: no-repeat; height: 300px;"></div>
-          <div class="col-md-8">
+          <div class="col-md-8"><br />
             <h3>{{title}}</h3><br />
             <p>{{description}}</p>
             <p>${{price}}/week</p>
             <p>rating: {{rating}} stars</p>
           </div>
         </div>
-      </a><br /><br />
+      </a>
       {{/each}}
     </div>
   </body>
