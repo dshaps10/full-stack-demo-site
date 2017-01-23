@@ -7,6 +7,34 @@ status: "Running",
 audienceIds: [ ],
 variations: [
 {
+id: "8177831416",
+key: "value_shoppers"
+},
+{
+id: "8173592919",
+key: "quality_shoppers"
+}
+],
+id: "8171477540",
+key: "DESTINATION_SEARCH_ALGORITHM",
+layerId: "8174309851",
+trafficAllocation: [
+{
+entityId: "8177831416",
+endOfRange: 5000
+},
+{
+entityId: "8173592919",
+endOfRange: 10000
+}
+],
+forcedVariations: { }
+},
+{
+status: "Running",
+audienceIds: [ ],
+variations: [
+{
 id: "8166004652",
 key: "results_a"
 },
@@ -34,7 +62,7 @@ forcedVariations: { }
 audiences: [ ],
 groups: [ ],
 attributes: [ ],
-revision: "3",
+revision: "5",
 events: [ ],
 accountId: "6763041371"
 }
