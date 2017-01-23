@@ -10,7 +10,7 @@ let destinations = [
     "state": "California",
     "country": "United States",
     "continent": "North America",
-    "description": "Visit the wonderful, eclectic, city by the Bay",
+    "description": "San Francisco, in northern California, is a hilly city on the tip of a peninsula surrounded by the Pacific Ocean and San Francisco Bay. It's known for its year-round fog, iconic Golden Gate Bridge, cable cars and colorful Victorian houses. The Financial District's Transamerica Pyramid is its most distinctive skyscraper. In the bay sits Alcatraz Island, site of the notorious former prison.",
     "price": "2300",
     "rating": "4"
   }, {
@@ -19,7 +19,7 @@ let destinations = [
     "state": "Berlin",
     "country": "Germany",
     "continent": "Europe",
-    "description": "An historic city with a lot of modern charm",
+    "description": "Berlin, Germany’s capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Divided during the Cold War, its 18th-century Brandenburg Gate has become a symbol of reunification. The city's also known for its art scene and modern landmarks like the gold-colored, swoop-roofed Berliner Philharmonie, built in 1963.",
     "price": "5400",
     "rating": "3"
   }, {
@@ -48,6 +48,15 @@ let destinations = [
     "description": "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.",
     "price": "4200",
     "rating": "4"
+  }, {
+    "img": "https://csumusic.files.wordpress.com/2014/06/marienplatz-munich.jpg",
+    "title": "Munich",
+    "state": "Bavaria",
+    "country": "Germany",
+    "continent": "Europe",
+    "description": "Munich, Bavaria’s capital, is home to centuries-old buildings and numerous museums. The city is known for its annual Oktoberfest celebration and its beer halls, including the famed Hofbräuhaus, founded in 1589. In the Altstadt (Old Town), central Marienplatz square contains landmarks such as Neo-Gothic Neues Rathaus (town hall), with a popular glockenspiel show that chimes and reenacts stories from the 16th century.",
+    "price": "4300",
+    "rating": "2"
   }
 ];
 

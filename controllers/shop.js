@@ -42,6 +42,7 @@ shop.get('/shop', (req, res) => {
 
   // activate the Optimizely experiment
   let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
+  console.log(variation);
 
   // decide which version of the UI to show based on the bucketed variation
   if (variation === 'variation_a') {

@@ -55,7 +55,7 @@ travel.get('/travel', (req, res) => {
 				res.send('Could not retrieve destinations');
 			});
 	} else if (variation === 'results_b') {
-		Destination.find().sort({"rate": -1})
+		Destination.find().sort({"price": -1})
 			.then((destinations) => {
 				res.render('travel/home.hbs', {
 					destinationArray: destinations.slice(0,3)
@@ -76,15 +76,46 @@ travel.get('/travel', (req, res) => {
 });
 
 travel.get('/travel/destinations', (req, res) => {
-	let search = searchToUpperCase(req.query.search);
-	Destination.find({"country": search})
-		.then((destinations) => {
-			res.render('travel/destination_listing', {
-				destinationArray: destinations
-			})
-		}, (e) => {
-			res.send('Could not find matching destinations');
-		});
+	// Generate random userID
+	let userID = uuid();
+
+	// Activate Optimizely Experiment
+	let variation = optimizelyClient.activate('DESTINATION_SEARCH_ALGORITHM', userID);
+	console.log(variation);
+
+	// Determine how search results should be displayed
+	if (variation === 'value_shoppers') {
+		let search = searchToUpperCase(req.query.search);
+		Destination.find({'country': search}).sort({'price': 1})
+			.then((destinations) => {
+				res.render('travel/destination_listing', {
+					destinationArray: destinations
+				})
+			}, (e) => {
+				res.send('Could not find matching destinations');
+			});
+	} else if (variation === 'quality_shoppers') {
+		let search = searchToUpperCase(req.query.search);
+		Destination.find({'country': search}).sort({'rating': -1})
+			.then((destinations) => {
+				res.render('travel/destination_listing', {
+					destinationArray: destinations
+				})
+			}, (e) => {
+				res.send('Could not find matching destinations');
+			});
+	} else {
+		let search = searchToUpperCase(req.query.search);
+		Destination.find({'country': search}).sort({'price': 1})
+			.then((destinations) => {
+				res.render('travel/destination_listing', {
+					destinationArray: destinations
+				})
+			}, (e) => {
+				res.send('Could not find matching destinations');
+			});
+	}
+
 });
 
 module.exports = {
