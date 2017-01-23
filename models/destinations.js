@@ -26,7 +26,11 @@ let Destination = mongoose.model('Destination', {
 		type: String,
 		minlength: 10
 	},
-	rate: {
+	price: {
+		type: Number,
+		default: null
+	},
+	rating: {
 		type: Number,
 		default: null
 	}

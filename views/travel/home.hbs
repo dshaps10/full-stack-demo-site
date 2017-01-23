@@ -24,7 +24,7 @@
     <div class="jumbotron" style="background-image: url('https://knowledgestew.com/wp-content/uploads/2016/03/Airplane-window.jpg'); background-size: cover; background-position: center;">
       <h1 style="font-family: cursive; font-size: 7em; color: white;">Paradiso Travel</h1>
       <form method="get", action="/travel/destinations">
-        <input type="text" name="search" placeholder="Search for a Destination"><br /><br />
+        <input type="text" name="search" placeholder="Search by country"><br /><br />
         <input type="submit" value="Search">
       </form>
     </div>
@@ -41,7 +41,7 @@
           <div class="img" style="background-image: url({{img}}); background-size: cover; background-position: center;"></div>
         </a>
         <h3>{{title}}</h3 >
-        <p>${{rate}}/week</p>
+        <p>${{price}}/week</p>
       </div>
       {{/each}}
     </div>
