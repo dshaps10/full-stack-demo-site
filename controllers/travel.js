@@ -89,7 +89,8 @@ travel.get('/travel/destinations', (req, res) => {
 		Destination.find({'country': search}).sort({'price': 1})
 			.then((destinations) => {
 				res.render('travel/destination_listing', {
-					destinationArray: destinations
+					destinationArray: destinations,
+					query: search
 				})
 			}, (e) => {
 				res.send('Could not find matching destinations');
@@ -99,7 +100,8 @@ travel.get('/travel/destinations', (req, res) => {
 		Destination.find({'country': search}).sort({'rating': -1})
 			.then((destinations) => {
 				res.render('travel/destination_listing', {
-					destinationArray: destinations
+					destinationArray: destinations,
+					query: search
 				})
 			}, (e) => {
 				res.send('Could not find matching destinations');
@@ -109,7 +111,8 @@ travel.get('/travel/destinations', (req, res) => {
 		Destination.find({'country': search}).sort({'price': 1})
 			.then((destinations) => {
 				res.render('travel/destination_listing', {
-					destinationArray: destinations
+					destinationArray: destinations,
+					query: search
 				})
 			}, (e) => {
 				res.send('Could not find matching destinations');

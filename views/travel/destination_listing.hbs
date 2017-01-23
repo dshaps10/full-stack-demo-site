@@ -8,8 +8,24 @@
     <title>{{pageTitle}}</title>
   </head>
 	<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="../" style="color: grey;">«</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="../travel" style="color: grey;">Home</a>
+          <a class="nav-item nav-link" href="#" style="color: grey; font-weight: bold;">Destinations</a>
+          <a class="nav-item nav-link" href="#" style="color: grey;">My Account</a>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron results-hero-image" style="height: 300px; background-image: url('https://static.pexels.com/photos/196464/pexels-photo-196464.jpeg'); background-position: center; background-size: cover;">
+      <h2 class="results-title" style="font-size: 5em; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-top: 5%;">Destinations</h2>
+    </div><br />
     <div class="container">
-      <h2>Your Results</h2>
+      <h2>Search results for "{{query}}"</h2><br /><br />
       {{#each destinationArray}}
       <a href="/travel/destinations/{{_id}}" style="text-decoration: none;">
         <div class="row">
@@ -21,7 +37,7 @@
             <p>rating: {{rating}} stars</p>
           </div>
         </div>
-      </a><br />
+      </a><br /><br />
       {{/each}}
     </div>
   </body>
