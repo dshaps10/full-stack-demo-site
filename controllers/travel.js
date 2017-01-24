@@ -121,6 +121,26 @@ travel.get('/travel/destinations', (req, res) => {
 
 });
 
+travel.get('/travel/destinations/:id', (req, res) => {
+	let id = req.params.id;
+
+	Destination.find({_id: ObjectID(id)})
+		.then((destination) => {
+			res.render('travel/destination_details.hbs', {
+				img: destination[0].img,
+				title: destination[0].title,
+				state: destination[0].state,
+				country: destination[0].country,
+				continent: destination[0].continent,
+				description: destination[0].description,
+				price: destination[0].price,
+				rating: destination[0].rating
+			});
+		}, (e) => {
+			res.send('Could not retrieve destination ', e);
+		});
+})
+
 module.exports = {
 	travel
 };

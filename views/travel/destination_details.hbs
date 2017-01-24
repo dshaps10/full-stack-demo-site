@@ -22,24 +22,25 @@
         </div>
       </div>
     </nav>
-    <div class="jumbotron results-hero-image" style="height: 300px; background-image: url('https://static.pexels.com/photos/196464/pexels-photo-196464.jpeg'); background-position: center; background-size: cover;">
-      <h2 class="results-title" style="font-size: 5em; color: white; text-shadow: 2px 2px 8px black; padding-top: 5%;">DESTINATIONS</h2>
+    <div class="jumbotron results-hero-image" style="height: 300px; background-image: url({{img}}); background-position: center; background-size: cover;">
+      <h2 class="results-title" style="font-size: 5em; color: white; text-shadow: 2px 2px 8px black; padding-top: 5%;">{{title}}</h2>
     </div><br />
     <div class="container">
-      <h2>Search results for "{{query}}"</h2><br /><br />
-      {{#each destinationArray}}
-      <a href="/travel/destinations/{{_id}}" style="text-decoration: none;" class="destination">
-        <div class="row">
-          <div class="col-md-4 img" style="background-image: url({{img}}); background-size: cover; background-position: center; background-repeat: no-repeat; height: 300px;"></div>
-          <div class="col-md-8"><br />
-            <h3>{{title}}</h3><br />
-            <p>{{description}}</p>
-            <p>${{price}}/week</p>
-            <p>rating: {{rating}} stars</p>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="product-details">
+            <p style="font-size: 1.25em;">{{description}}</p>
           </div>
         </div>
-      </a>
-      {{/each}}
+        <div class="col-md-4">
+          <div class="price-and-checkout" style="text-align: center;">
+            <br /><h3 style="text-align: center;">${{price}}/week</h3>
+            <p>User Rating: <b>{{rating}}/5</b></p>
+            <a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Purchase this vacation</a>
+          </div>
+        </div>
+      </div>
+      <br />
     </div>
   </body>
 </html>
