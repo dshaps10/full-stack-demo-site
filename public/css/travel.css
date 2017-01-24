@@ -1,5 +1,5 @@
 * {
-	font-family: Noto Sans;
+	font-family: Open Sans;
 }
 
 @keyframes fadein {
@@ -49,8 +49,17 @@ input[type=text]:focus {
     width: 75%;
 }
 
+.search {
+	background-color: #0081BA;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	width: 100px;
+	height: 50px;
+}
+
 .navbar-nav > a {
-	font-size: 1.25em;
+	font-size: 1.10em;
 }
 
 .steps {
@@ -71,7 +80,7 @@ input[type=text]:focus {
 	margin: 35px;
 	padding-right: 10px;
 	transition: 0.4s background-color;
-	color: black;
+	color: #0081BA;
 	border-radius: 10px;
 }
 
