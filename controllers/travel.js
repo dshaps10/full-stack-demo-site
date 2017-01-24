@@ -32,10 +32,8 @@ travel.set('views', __dirname + './../views');
 
 // Point travel towards stylesheets
 travel.use(express.static(__dirname + './../public'));
-
 // Allows for JSON-formatted POST requests
 travel.use(bodyParser.json());
-
 // Routes for travel site
 travel.get('/travel', (req, res) => {
 	// Generate random userID

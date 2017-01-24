@@ -1,27 +1,28 @@
 * {
-  font-family: Open Sans;
+  font-family: Copperplate;
 }
 
 .title {
   text-align: center;
-  color: #0081BA;
+  color: white;
 }
 
 .hero-image {
-  background-image: url('http://www.wallpapermade.com/images/wallpapers/originals/harley-davidson-motorcycle-black-white-photo-wallpaper-2024.jpg');
+  background-image: url('https://4.bp.blogspot.com/-tdYTws2mERY/V7dRgK7RlxI/AAAAAAAAeDE/OncU6Bdin1Qmrq2J3nMiTV52G1XPChArQCLcB/s1600/Harley-Davidson-6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: #0081BA;
+  background-position: center;
+  color: white;
   height: 500px;
 }
 
 .shop-body {
   text-align: center;
-  color: #0081BA;
 }
 
 .btn {
   color: red;
+  font-family: Copperplate;
 }
 
 /*Styles below specific to 'products.hbs' file*/
@@ -83,7 +84,6 @@
   font-size: 1.5em;
   color: #0081BA;
 }
-
 
 
 

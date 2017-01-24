@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/shop.css" type="text/css">
+    <script type="text/javascript" src="/javascript/client.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
   </head>
@@ -32,11 +34,11 @@
     </div>
     <div class="container shop-body">
       {{#each productArray}}
-      <a href="/shop/products/{{_id}}" class="product-detail" style="text-decoration: none;">
+      <a href="/shop/products/{{_id}}" class="product-detail" style="text-decoration: none; width: 100%;">
         <div class="product">
             <div class="img" style="background-image: url({{img}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
             <h2>{{title}}</h2>
-            <h3>${{price}}</h3>
+            <h3 class="price">${{price}}</h3>
             <!-- <p>${{price}}</p> -->
         </div>
       </a>  
