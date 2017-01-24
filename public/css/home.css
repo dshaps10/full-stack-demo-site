@@ -1,3 +1,7 @@
+* {
+	font-family: Open Sans;
+}
+
 /*Styles below specific to Demo Suite landing page*/
 .micro-site-link {
 	border: 2px solid #0081ba;
@@ -8,7 +12,7 @@
 }
 
 .micro-site-link:hover {
-	background-color: #0081ba;
+	background-color: #0081BA;
 }
 
 .micro-site-title {
@@ -16,8 +20,12 @@
 	color: black;
 }
 
+.btn:hover {
+	background-color: blue;
+}
 
-a {
+
+/*a {
 	display: block;
 	border: 2px solid #0081ba;
 	margin-top: 20px;
@@ -35,4 +43,4 @@ a {
 a:hover {
 	background-color: #0081ba;
 	text-decoration: none;
-}
+}*/
