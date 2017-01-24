@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/shop.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
@@ -22,23 +23,23 @@
       </div>
     </nav>
     <div class="jumbotron title" style="background-color: white; height: 300px;">
-      <h1>Resin & Steel Bikes and Gear</h1>
+      <h1>Anderson & Boss Bikes and Gear</h1>
       <img src="/imgs/logo.png" width="200" height="160">
     </div>
     <div class="jumbotron results-hero-image">
-      <br /><h2 style="font-size: 5em; text-shadow: -1px 0 #cc7a00, 0 1px #cc7a00, 1px 0 #cc7a00, 0 -1px #cc7a00;
+      <br /><h2 style="font-size: 5em; text-shadow: -1px 0 #0081BA, 0 1px #0081BA, 1px 0 #0081BA, 0 -1px #0081BA;
 ">Our Products</h2><br /><br />
     </div>
     <div class="container shop-body">
       {{#each productArray}}
-      <div class="product">
-        <a href="/shop/products/{{_id}}" class="product-detail">
-          <div class="img" style="background-image: url({{img}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
-          <h2 style="color: black;">{{title}}</h2>
-          <h3 style="color: black;">${{price}}</h3>
-          <!-- <p>${{price}}</p> -->
-        </a>
-      </div>
+      <a href="/shop/products/{{_id}}" class="product-detail" style="text-decoration: none;">
+        <div class="product">
+            <div class="img" style="background-image: url({{img}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+            <h2>{{title}}</h2>
+            <h3>${{price}}</h3>
+            <!-- <p>${{price}}</p> -->
+        </div>
+      </a>  
       {{/each}}
     </div>
 	</body>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/shop.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
@@ -22,25 +23,26 @@
       </div>
     </nav>
     <div class="jumbotron title" style="background-color: white; height: 300px;">
-      <h1>Resin & Steel Bikes and Gear</h1>
+      <h1>Anderson & Boss Bikes and Gear</h1>
       <img src="/imgs/logo.png" width="200" height="160">
     </div>
-    <div class="row">
-      <div class="col-md-7">
-        <div class="img" style="background-image: url({{img}}); background-size: contain; background-position: center; background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="img" style="background-image: url({{img}}); background-size: contain; background-position: center; background-repeat: no-repeat;">
+          </div>
         </div>
-      </div>
-      <div class="col-md-5">
-        <div class="product-details">
-          <h1>{{title}}</h1>
-          <h3>{{description}}</h3>
-        </div>
-        <br />
-        <div class="price-and-checkout" style="text-align: center;">
-          <h4 style="text-align: center;">${{price}}</h4>
-          <a href="#">
-            <button type="button" class="add-to-cart">Purchase Now</button>
-          </a>
+        <div class="col-md-5">
+          <div class="product-details">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+          </div>
+          <br />
+          <div class="price-and-checkout" style="text-align: center;">
+            <h4 style="text-align: center;">${{price}}</h4>
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #0081BA; border-color: #0081BA">Add to Cart</a>
+            </a>
+          </div>
         </div>
       </div>
     </div>

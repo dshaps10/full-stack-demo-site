@@ -1,27 +1,27 @@
+* {
+  font-family: Open Sans;
+}
+
 .title {
   text-align: center;
-  color: #cc7a00;
-  font-family: Copperplate;
+  color: #0081BA;
 }
 
 .hero-image {
   background-image: url('http://www.wallpapermade.com/images/wallpapers/originals/harley-davidson-motorcycle-black-white-photo-wallpaper-2024.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: #cc7a00;
-  font-family: Copperplate;
+  color: #0081BA;
   height: 500px;
 }
 
 .shop-body {
-  font-family: Copperplate;
   text-align: center;
-  color: #cc7a00;
+  color: #0081BA;
 }
 
 .btn {
   color: red;
-  font-family: Copperplate;
 }
 
 /*Styles below specific to 'products.hbs' file*/
@@ -32,12 +32,11 @@
   background-size: cover;
   height: 300px;
   color: white;
-  font-family: Copperplate;
   text-align: center;
 }
 
 .product {
-  border: 2px solid #cc7a00;
+  border: 2px solid;
   border-radius: 5px;
   width: 75%;
   margin: auto;
@@ -46,11 +45,13 @@
   padding-top: 20px;
   padding-bottom: 20px;
   vertical-align: middle;
-  transition: 0.4s background-color;
+  transition: 0.4s background-color, 0.4s color;
+  color: #0081BA;
 }
 
 .product:hover {
-  background-color: #cc7a00;
+  background-color: #0081BA;
+  color: white;
 }
 
 .product:hover > a {
@@ -63,8 +64,7 @@
 
 /*Styles below specific to 'product_details.hbs' file*/
 .product-details {
-  font-family: Copperplate;
-  color: #cc7a00;
+  color: #0081BA;
   padding-top: 75px;
 }
 
@@ -74,16 +74,14 @@
 }
 
 .price-and-checkout {
-  font-family: Copperplate;
-  color: #cc7a00;
+  color: #0081BA;
 }
 
 .add-to-cart {
   background: none;
-  border: 2px solid #cc7a00;
+  border: 2px solid #0081BA;
   font-size: 1.5em;
-  color: #cc7a00;
-  font-family: Copperplate;
+  color: #0081BA;
 }
 
 
