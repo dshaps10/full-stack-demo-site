@@ -111,7 +111,8 @@ shop.get('/shop/products', (req, res) => {
     Product.find()
       .then((products) => {
         res.render('shop/products.hbs', {
-          productArray: products
+          productArray: products,
+          variation
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -120,7 +121,8 @@ shop.get('/shop/products', (req, res) => {
     Product.find().sort({"price":-1})
       .then((products) => {
         res.render('shop/products.hbs', {
-          productArray: products
+          productArray: products,
+          variation
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -129,21 +131,13 @@ shop.get('/shop/products', (req, res) => {
     Product.find()
       .then((products) => {
         res.render('shop/products.hbs', {
-          productArray: products
+          productArray: products,
+          variation: 'not included'
         });
       }, (e) => {
         res.send('Could not retrieve products');
       });
   }
-
-  // Product.find()
-  //   .then((products) => {
-  //     res.render('shop/products.hbs', {
-  //       productArray: products
-  //     });
-  //   }, (e) => {
-  //     res.send('Could not retrieve products');
-  //   });
 });
 
 shop.get('/shop/products/:id', (req, res) => {
@@ -164,7 +158,8 @@ shop.get('/shop/products/:id', (req, res) => {
           img: product[0].img,
           title: product[0].title,
           description: product[0].description,
-          price: product[0].price
+          price: product[0].price,
+          variation
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);
@@ -176,7 +171,8 @@ shop.get('/shop/products/:id', (req, res) => {
           img: product[0].img,
           title: product[0].title,
           description: product[0].description,
-          price: priceDiscount(product[0].price) // Run price through the priceDiscount function
+          price: priceDiscount(product[0].price), // Run price through the priceDiscount function
+          variation
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);
@@ -188,7 +184,8 @@ shop.get('/shop/products/:id', (req, res) => {
           img: product[0].img,
           title: product[0].title,
           description: product[0].description,
-          price: product[0].price
+          price: product[0].price,
+          variation: 'not bucketed'
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);

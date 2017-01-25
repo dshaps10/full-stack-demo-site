@@ -2,12 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/shop.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
-  </head>
+  </head> 
 	<body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,6 +20,7 @@
           <a class="nav-item nav-link active" href="../" style="color: #800000; font-size: 1.15em;">Addison & Boss</a>
           <a class="nav-item nav-link" href="/shop/products">Products</a>
           <a class="nav-item nav-link" href="#">My Account</a>
+          <button type="button" class="btn btn-primary btn-sm active" style="background-color: #800000; border-color: #800000;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
         </div>
       </div>
     </nav><br />
@@ -45,6 +47,31 @@
             <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #800000; border-color: #800000;">Add to Cart</a>
             </a>
           </div><br />
+        </div>
+      </div>
+    </div>
+    <!-- Experiment information modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Experiment Information</h4>
+          </div>
+          <div class="modal-body">
+            <h5 style="color: #800000;">Experiment Name:</h5>
+            <p>'PRICE_TEST'</p><hr />
+            <h5 style="color: #800000;">Hypothesis:</h5>
+            <p>Adding a 15% discount to motorcycles over $8,000 will incite price sensitive buyers to purchase more expensive motorcycles.</p><hr />
+            <h5 style="color: #800000;">Your Variation:</h5>
+            <p>{{variation}}</p><hr />
+            <h5 style="color: #800000;">What's Happening:</h5>
+            <p>If a user is in 'original_variation' then they are seeing the motorcycle with its original price; if a user is bucketed into 'discounted_price', Optimizely will direct the site to use its discounting function and the user will see the price reduced by 15%</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-lg active" data-dismiss="modal" style="background-color: #800000; border-color: #800000;">Close</button>
+          </div>
         </div>
       </div>
     </div>
