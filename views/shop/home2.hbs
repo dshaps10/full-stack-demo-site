@@ -2,12 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="/css/shop.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>{{pageTitle}}</title>
-  </head>	
+  </head> 
   <body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,23 +17,59 @@
       <a class="navbar-brand" href="../">«</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#" style="color: #800000; font-size: 1.15em;">Addison & Boss <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="/shop/products">Products</a>
           <a class="nav-item nav-link" href="#">My Account</a>
+          <button type="button" class="btn btn-primary btn-sm active" style="background-color: #800000; border-color: #800000;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
         </div>
       </div>
     </nav>
-    <div class="jumbotron title" style="background-color: white; height: 300px;">
-      <h1>Anderson & Boss Bikes and Gear</h1>
-      <img src="/imgs/logo.png" width="200" height="160">
+    <div class="jumbotron hero-image" style="background-image: url('http://www.richardsonsharleydavidson.com.au/wp-content/uploads/2015/08/courses_back_to_biking_course_banner_std.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+      <div class="container">
+        <br /><h2 style="font-size: 2em;">Bikes guaranteed to give you <br /> the ride of your life</h2><br />
+        <a href="/shop/products">
+          <a href="/shop/products" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #800000; border-color: #800000;">See our amazing selection</a>
+            </a>
+        </a>
+      </div>
     </div>
-    <div class="jumbotron hero-image" style="background-image: url('https://static.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg')">
-      <br /><h2 style="font-size: 3em; text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;">The toughest brands <br /> for the toughest roads</h2><br /><br />
-      <a href="/shop/products">
-        <button type="button" class="btn btn-primary" style="background-color: #0081BA; border: none; font-size: 1.25em; color: white;">Check out the best gear around</button>
+    <div class="product-listing">
+      <h2 style="color: #800000;">Featured Bikes</h2>
+      <p>The best bikes, specially curated</p>
+      {{#each productArray}}
+      <a href="/shop/products/{{_id}}">
+        <div class="col-md-3 col-sm-6 col-xs-6 product" style="border: 2px solid black;">
+          <div class="thumbnail" style="background-image: url({{img}}); background-size: contain; background-repeat: no-repeat; background-position: center;"></div><br />
+          <h4>{{title}}</h4>
+          <p>${{price}}</p>
+        </div>
       </a>
+      {{/each}}
     </div>
-    <div class="container shop-body">
+    <!-- Experiment information modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Experiment Information</h4>
+          </div>
+          <div class="modal-body">
+            <h5 style="color: #800000;">Experiment Name:</h5>
+            <p>'LANDING_PAGE_UI'</p><hr />
+            <h5 style="color: #800000;">Hypothesis:</h5>
+            <p>Swapping out the banner image and the main call to action will increase conversions</p><hr />
+            <h5 style="color: #800000;">Your Variation:</h5>
+            <p>{{variation}}</p><hr />
+            <h5 style="color: #800000;">What's Happening:</h5>
+            <p>Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-lg active" data-dismiss="modal" style="background-color: #800000; border-color: #800000;">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
-	</body>
+  </body>
 </html>

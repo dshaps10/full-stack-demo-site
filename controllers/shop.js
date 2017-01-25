@@ -45,33 +45,39 @@ shop.get('/shop', (req, res) => {
   console.log(variation);
 
   // decide which version of the UI to show based on the bucketed variation
-  // if (variation === 'variation_a') {
-  //   Product.find()
-  //     .then((products) => {
-  //       res.render('shop/home.hbs', {
-  //         productArray: products.slice(0,3)
-  //       });
-  //     }, (e) => {
-  //       res.send('Could not retrieve products');
-  //     });
-  // } else if (variation === 'variation_b') {
-  //   res.render('shop/home2.hbs', {
-  //     pageTitle: 'E-Commerce Shop'
-  //   });
-  // } else {
-  //   res.render('shop/home.hbs', {
-  //     pageTitle: 'E-Commerce Shop'
-  //   });
-  // }
+  if (variation === 'variation_a') {
     Product.find()
       .then((products) => {
         res.render('shop/home.hbs', {
-          productArray: products.slice(0,3)
+          productArray: products.slice(0,3),
+          variation
         });
       }, (e) => {
         res.send('Could not retrieve products');
       });
+  } else if (variation === 'variation_b') {
+    Product.find()
+      .then((products) => {
+        res.render('shop/home2.hbs', {
+          productArray: products.slice(0,3),
+          variation
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
+      });
+  } else {
+    Product.find()
+      .then((products) => {
+        res.render('shop/home.hbs', {
+          productArray: products.slice(0,3),
+          variation
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
+      });
+  }
 
+  // Send conversion data back to Optimizely
   optimizelyClient.track('sample_conversion', userID)
 
 });
