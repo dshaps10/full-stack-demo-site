@@ -30,9 +30,18 @@
         </a>
       </div>
     </div>
-    <div class="container shop-body">
-      <h2 style="color: #800000">Featured Bikes</h2>
-      <p>Our specially curated motorcycles</p>
+    <div class="top-products">
+      <h2 style="color: #800000;">Featured Bikes</h2>
+      <p>The best bikes, specially curated</p>
+      {{#each productArray}}
+      <a href="/travel/destinations/{{_id}}">
+        <div class="col-md-3 col-sm-6 col-xs-6 product">
+          <div class="thumbnail" style="background-image: url({{img}}); background-size: contain; background-repeat: no-repeat; background-position: center;"></div><br />
+          <h4>{{title}}</h4>
+          <p>${{price}}</p>
+        </div>
+      </a>
+      {{/each}}
     </div>
 	</body>
 </html>

@@ -45,22 +45,32 @@ shop.get('/shop', (req, res) => {
   console.log(variation);
 
   // decide which version of the UI to show based on the bucketed variation
-  if (variation === 'variation_a') {
-    res.render('shop/home.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  } else if (variation === 'variation_b') {
-    res.render('shop/home2.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  } else {
-    res.render('shop/home.hbs', {
-      pageTitle: 'E-Commerce Shop'
-    });
-  }
-  // res.render('shop/home.hbs', {
-  //   pageTitle: 'E-Commerce Shop'
-  // });
+  // if (variation === 'variation_a') {
+  //   Product.find()
+  //     .then((products) => {
+  //       res.render('shop/home.hbs', {
+  //         productArray: products.slice(0,3)
+  //       });
+  //     }, (e) => {
+  //       res.send('Could not retrieve products');
+  //     });
+  // } else if (variation === 'variation_b') {
+  //   res.render('shop/home2.hbs', {
+  //     pageTitle: 'E-Commerce Shop'
+  //   });
+  // } else {
+  //   res.render('shop/home.hbs', {
+  //     pageTitle: 'E-Commerce Shop'
+  //   });
+  // }
+    Product.find()
+      .then((products) => {
+        res.render('shop/home.hbs', {
+          productArray: products.slice(0,3)
+        });
+      }, (e) => {
+        res.send('Could not retrieve products');
+      });
 
   optimizelyClient.track('sample_conversion', userID)
 

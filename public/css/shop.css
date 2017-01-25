@@ -36,9 +36,8 @@
   text-align: center;
 }
 
-.product {
+/*.product {
   border: 2px solid;
-  border-radius: 5px;
   width: 75%;
   margin: auto;
   margin-bottom: 30px;
@@ -48,15 +47,23 @@
   vertical-align: middle;
   transition: 0.4s background-color, 0.4s color;
   color: #0081BA;
+}*/
+
+.top-products {
+  text-align: center;
+}
+
+.product {
+  display: inline-block;
+  margin: 35px;
+  padding-right: 10px;
+  transition: 0.4s background-color;
+  color: #800000;
+  border: 2px solid black;
 }
 
 .product:hover {
-  background-color: #0081BA;
-  color: white;
-}
-
-.product:hover > a {
-  text-decoration: none;
+  background-color: #e6e6e6;
 }
 
 .product-listing {
@@ -71,7 +78,10 @@
 
 .img {
   height: 500px;
-  border-radius: 10px;
+}
+
+.thumbnail {
+  height: 250px;
 }
 
 .price-and-checkout {
