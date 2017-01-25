@@ -13,19 +13,15 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="../../">«</a>
+      <a class="navbar-brand" href="../">«</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="../">Home</a>
-          <a class="nav-item nav-link active" href="../products">Products <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="">My Account</a>
+          <a class="nav-item nav-link active" href="../" style="color: #800000; font-size: 1.15em;">Addison & Boss</a>
+          <a class="nav-item nav-link" href="/shop/products">Products</a>
+          <a class="nav-item nav-link" href="#">My Account</a>
         </div>
       </div>
-    </nav>
-    <div class="jumbotron title" style="background-color: white; height: 300px;">
-      <h1>Anderson & Boss Bikes and Gear</h1>
-      <img src="/imgs/logo.png" width="200" height="160">
-    </div>
+    </nav><br />
     <div class="container">
       <div class="row">
         <div class="col-md-7">
@@ -34,15 +30,21 @@
         </div>
         <div class="col-md-5">
           <div class="product-details">
-            <h2 style="text-align:">{{title}}</h2>
+            <h2 style="color: #800000;">{{title}}</h2>
+            <h4>${{price}}</h4>
+            <hr />
+            <ul>
+              <li>Free U.S. Shipping</li>
+              <li>Available in U.S. and Canada</li>
+            </ul>
+            <hr />
             <p>{{description}}</p>
           </div>
           <br />
           <div class="price-and-checkout" style="text-align: center;">
-            <h4>${{price}}</h4>
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #0081BA; border-color: #0081BA">Add to Cart</a>
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #800000; border-color: #800000;">Add to Cart</a>
             </a>
-          </div>
+          </div><br />
         </div>
       </div>
     </div>

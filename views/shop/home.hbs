@@ -26,7 +26,8 @@
       <div class="container">
         <br /><h2 style="font-size: 2em;">The toughest brands <br /> for the toughest roads</h2><br />
         <a href="/shop/products">
-          <button type="button" class="btn btn-primary" style="background: none; border: 2px solid white; font-size: 1.25em; color: white;">Check out our products</button>
+          <a href="/shop/products" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: #800000; border-color: #800000;">Check out our Bikes</a>
+            </a>
         </a>
       </div>
     </div>
@@ -34,7 +35,7 @@
       <h2 style="color: #800000;">Featured Bikes</h2>
       <p>The best bikes, specially curated</p>
       {{#each productArray}}
-      <a href="/travel/destinations/{{_id}}">
+      <a href="/shop/products/{{_id}}">
         <div class="col-md-3 col-sm-6 col-xs-6 product" style="border: 2px solid black;">
           <div class="thumbnail" style="background-image: url({{img}}); background-size: contain; background-repeat: no-repeat; background-position: center;"></div><br />
           <h4>{{title}}</h4>
