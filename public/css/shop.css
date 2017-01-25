@@ -2,6 +2,13 @@
   font-family: Copperplate;
 }
 
+@keyframes fadein {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .title {
   text-align: center;
   color: white;
@@ -16,6 +23,10 @@
   height: 500px;
 }
 
+.container {
+  animation: fadein 1s;
+}
+
 .shop-body {
   text-align: center;
 }
@@ -25,32 +36,16 @@
   font-family: Copperplate;
 }
 
-/*Styles below specific to 'products.hbs' file*/
-.results-hero-image{
-  background-image: url('http://www.harley-davidson.com/content/dam/h-d/images/motorcycles/my15/dom/bb-road-glide-reveal.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 300px;
-  color: white;
+.title {
+  animation: fadein 1s;
+}
+
+.product-listing {
   text-align: center;
 }
 
-/*.product {
-  border: 2px solid;
-  width: 75%;
-  margin: auto;
-  margin-bottom: 30px;
-  height: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  vertical-align: middle;
-  transition: 0.4s background-color, 0.4s color;
-  color: #0081BA;
-}*/
-
-.top-products {
-  text-align: center;
+.all-products {
+  animation: fadein 2s;
 }
 
 .product {
@@ -58,16 +53,11 @@
   margin: 35px;
   padding-right: 10px;
   transition: 0.4s background-color;
-  color: #800000;
-  border: 2px solid black;
+  color: black;
 }
 
 .product:hover {
   background-color: #e6e6e6;
-}
-
-.product-listing {
-  display: inline-block;
 }
 
 /*Styles below specific to 'product_details.hbs' file*/
