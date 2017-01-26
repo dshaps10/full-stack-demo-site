@@ -38,7 +38,7 @@ shop.get('/shop', (req, res) => {
     name: 'LANDING_PAGE_UI',
     hypothesis: 'Swapping out the banner image and the main call to action will increase conversions',
     explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action',
-    variation: variation
+    variation
   }
 
   // decide which version of the UI to show based on the bucketed variation
@@ -83,13 +83,21 @@ shop.get('/shop/products', (req, res) => {
   // Activate Optimizely experiment
   let variation = optimizelyClient.activate("SEARCH_RESULT_SORTING_EXPERIMENT", userID);
 
+  // this object contains information about the experiment (To be displayed in client-side modal)
+  let experimentInfo = {
+    name: 'SEARCH_RESULT_SORTING_EXPERIMENT',
+    hypothesis: 'Listing items in order of decreasing price will drive more customers to purchase expensive motorcycles and increased revenue per sale',
+    explanation: "If a user is in 'results_a' then they are seeing the default product listing which is in order of date added; if a user is bucketed into 'results_b' Optimizely will point the search function towards a different sorting mechanism, which lists products in order of decreasing price",
+    variation
+  }
+
   // determine how results should be displayed based on user variation
   if (variation === 'results_a') {
     Product.find()
       .then((products) => {
         res.render('shop/products.hbs', {
           productArray: products,
-          variation
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -99,7 +107,7 @@ shop.get('/shop/products', (req, res) => {
       .then((products) => {
         res.render('shop/products.hbs', {
           productArray: products,
-          variation
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -109,7 +117,7 @@ shop.get('/shop/products', (req, res) => {
       .then((products) => {
         res.render('shop/products.hbs', {
           productArray: products,
-          variation: 'not included'
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -125,7 +133,14 @@ shop.get('/shop/products/:id', (req, res) => {
 
   // Activate Optimizely experiment
   let variation = optimizelyClient.activate("PRICE_TEST", userID);
-  console.log(variation);
+
+  // this object contains information about the experiment (To be displayed in client-side modal)
+  let experimentInfo = {
+    name: 'PRICE_TEST',
+    hypothesis: 'Adding a 15% discount to motorcycles over $8,000 will incite price sensitive buyers to purchase more expensive motorcycles.',
+    explanation: "If a user is in 'original_price' then they are seeing the motorcycle with its original price; if a user is bucketed into 'discounted_price', Optimizely will direct the site to use its discounting function and the user will see the price reduced by 15%",
+    variation
+  }
 
   // determine how results should be displayed based on user variation
   if (variation === 'original_price') {
@@ -136,7 +151,7 @@ shop.get('/shop/products/:id', (req, res) => {
           title: product[0].title,
           description: product[0].description,
           price: product[0].price,
-          variation
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);
@@ -149,7 +164,7 @@ shop.get('/shop/products/:id', (req, res) => {
           title: product[0].title,
           description: product[0].description,
           price: priceDiscount(product[0].price), // Run price through the priceDiscount function
-          variation
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);
@@ -162,7 +177,7 @@ shop.get('/shop/products/:id', (req, res) => {
           title: product[0].title,
           description: product[0].description,
           price: product[0].price,
-          variation: 'not bucketed'
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve product ', e);
