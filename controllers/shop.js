@@ -23,20 +23,20 @@ let userID;
 // instantiate Express.js
 const shop = express();
 
-// Tell Handlebars where to look for partials
-hbs.registerPartials(__dirname +  '../views/partials');
+// // Tell Handlebars where to look for partials
+// hbs.registerPartials(__dirname +  '../views/partials');
 
-// Set Handlebars as default templating engine
-shop.set('view engine', 'hbs');
+// // Set Handlebars as default templating engine
+// shop.set('view engine', 'hbs');
 
-// points Express towars to views directory for easy rendering
-shop.set('views', __dirname + './../views');
+// // points Express towars to views directory for easy rendering
+// shop.set('views', __dirname + './../views');
 
-// Point shop towards stylesheets
-shop.use(express.static(__dirname + './../public'));
+// // Point shop towards stylesheets
+// shop.use(express.static(__dirname + './../public'));
 
-// Allows for JSON-formatted POST requests
-shop.use(bodyParser.json());
+// // Allows for JSON-formatted POST requests
+// shop.use(bodyParser.json());
 
 // route for e-commerce site
 shop.get('/shop', (req, res) => {
@@ -53,7 +53,9 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home.hbs', {
           productArray: products.slice(0,3),
-          variation
+          variation,
+          // Explains what's happening in the experiment
+          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -63,7 +65,9 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home2.hbs', {
           productArray: products.slice(0,3),
-          variation
+          variation,
+          // Explains what's happening in the experiment
+          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -73,7 +77,9 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home.hbs', {
           productArray: products.slice(0,3),
-          variation
+          variation: 'not bucketed',
+          // Explains what's happening in the experiment
+          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
         });
       }, (e) => {
         res.send('Could not retrieve products');
