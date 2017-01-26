@@ -1,4 +1,4 @@
-let datafile = {
+module.exports.datafile = {
 version: "2",
 projectId: "8156302092",
 experiments: [
@@ -90,9 +90,15 @@ forcedVariations: { }
 audiences: [ ],
 groups: [ ],
 attributes: [ ],
-revision: "7",
-events: [ ],
+revision: "10",
+events: [
+{
+experimentIds: [
+"8176471235"
+],
+id: "8193630882",
+key: "add_to_cart"
+}
+],
 accountId: "6763041371"
 }
-
-module.exports = {datafile};

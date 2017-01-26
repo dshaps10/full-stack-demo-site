@@ -17,6 +17,9 @@ let optimizelyClient = optimizely.createInstance({
   datafile: datafile
 });
 
+// Global variable where userID for Optly experiments will be stored
+let userID;
+
 // instantiate Express.js
 const shop = express();
 
@@ -38,7 +41,7 @@ shop.use(bodyParser.json());
 // route for e-commerce site
 shop.get('/shop', (req, res) => {
   // generate random userID
-  let userID = uuid();
+  userID = uuid();
 
   // activate the Optimizely experiment
   let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
@@ -82,26 +85,10 @@ shop.get('/shop', (req, res) => {
 
 });
 
-// API endpoint for seeding product data
-shop.post('/shop/products', (req, res) => {
-  let product = new Product({
-    title: req.body.title,
-    description: req.body.description,
-    price: req.body.price
-  });
-
-  product.save()
-    .then((doc) => {
-      res.send(doc);
-    }, (e) => {
-      res.send('Could not add product');
-    });
-})
-
 // route for retrieving product results
 shop.get('/shop/products', (req, res) => {
   // generate random userID
-  let userID = uuid();
+  userID = uuid();
 
   // Activate Optimizely experiment
   let variation = optimizelyClient.activate("SEARCH_RESULT_SORTING_EXPERIMENT", userID);
@@ -144,7 +131,7 @@ shop.get('/shop/products/:id', (req, res) => {
   let id = req.params.id;
 
   // generate random userID
-  let userID = uuid();
+  userID = uuid();
 
   // Activate Optimizely experiment
   let variation = optimizelyClient.activate("PRICE_TEST", userID);
@@ -192,6 +179,11 @@ shop.get('/shop/products/:id', (req, res) => {
       });
   }
 });
+
+// Dispatches conversion event back to Optimizely
+shop.post('/shop/products', (req, res) => {
+  optimizelyClient.track('add_to_cart', userID)
+})
 
 module.exports = {
   shop
