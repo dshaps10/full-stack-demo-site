@@ -4,7 +4,8 @@
 This site comprises a variety of "micro-site" that SEs, AEs, and Engineers at Optimizely can use to show how Full Stack works on example sites from a variety of Optimizely's most popular verticals.
 
 As of now, micro-sites included are:
-* E-Commerce (Resin & Steel Bikes and Gear)
+* E-Commerce - Addison & Boss
+* Travel - Paradiso Travel (half complete)
 
 This Full Stack demo suite attempts to solve the inherent issues with giving real-time demos on Full Stack, namely that it is impossible to demo Full Stack on a customer site like you would with our client-side products.
 
@@ -20,14 +21,14 @@ As of the most updated version of this ReadMe, there is no live, deployed versio
 This suite is built exclusively in Node.js.  This seemed a good choice given the ubiquity of JavaScript, but I would encourage you to port this to another language if you so choose.  I used MongoDB as a database, Mongoose as an ORM, and Handlebars as a templating engine.  For a full list of dependencies please see the ```package.json``` file.
 
 ##Seeding Data
-Use the file, ```seed.js```, to insert several documents into the Product collection in MongoDB. I've provided a default array of products, but this can be changed easily.  I've also provided an API endpoint at ```shop/products``` if you want to manually insert documents into the database. use a client like Postman to make the POST request to this endpoint.
+Each micro-site contains it's own seed file, found under the ```helpers``` directory. To seed the data, make sure that Mongo is installed on your machine, establish a connection to Mongo, and run the script ```npm run``` followed by the name of the seed file. As of now, that is ```shop-seed``` and ```travel-seed```.  A full list of these seed scripts is defined in ```package.json```. Because this process won't automatically end on its own be sure to press ```Ctrl + c``` to end the seeding process.  This should be done once you see the seeded JSON file output to the console.
 
 ##Notes on Code Style
-You'll notice I didn't abstract much of ```server.js``` away into functions.  While this would make the code cleaner, I wanted most of the logic to be in one place in order to make the demo flow a bit smoother. If there is enough demand, I can abstract away much of this logic into separate modules.
+You'll notice I didn't abstract much of the code within each micro-site's respective controller away into functions.  While this would make the code cleaner, I wanted most of the logic to be in one place in order to make the demo flow a bit smoother. I'll continue to abstract away much of the Node-specific functionality and if there is enough demand, I can move even more of the rendering logic into separate modules. 
 
 ##Future Plans
 As I continue to iterate over this demo suite, I will add more verticals in the form of additional micro-sites.  The current backlog is as follows:
-* Travel micro-site
 * Media micro-site
 * Angular micro-site
 * Financial services micro-site
+* B2B micro-site
