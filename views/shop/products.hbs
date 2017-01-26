@@ -27,30 +27,6 @@
       </a>
       {{/each}}
     </div>
-    <!-- Experiment information modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Experiment Information</h4>
-          </div>
-          <div class="modal-body">
-            <h5 style="color: #800000;">Experiment Name:</h5>
-            <p>'SEARCH_RESULT_SORTING_EXPERIMENT'</p><hr />
-            <h5 style="color: #800000;">Hypothesis:</h5>
-            <p>Listing items in order of decreasing price will drive more customers to purchase expensive motorcycles and increased revenue per sale</p><hr />
-            <h5 style="color: #800000;">Your Variation:</h5>
-            <p>{{variation}}</p><hr />
-            <h5 style="color: #800000;">What's Happening:</h5>
-            <p>If a user is in 'results_a' then they are seeing the default product listing which is in order of date added; if a user is bucketed into 'results_b' Optimizely will point the search function towards a different sorting mechanism, which lists products in order of decreasing price</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-lg active" data-dismiss="modal" style="background-color: #800000; border-color: #800000;">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{> experimentInfoModal}}
 	</body>
 </html>

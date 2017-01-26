@@ -1,0 +1,25 @@
+<!-- Experiment information modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Experiment Information</h4>
+      </div>
+      <div class="modal-body">
+        <h5 style="color: #800000;">Experiment Name:</h5>
+        <p>'{{experimentInfo.name}}'</p><hr />
+        <h5 style="color: #800000;">Hypothesis:</h5>
+        <p>{{experimentInfo.hypothesis}}</p><hr />
+        <h5 style="color: #800000;">Your Variation:</h5>
+        <p>{{experimentInfo.variation}}</p><hr />
+        <h5 style="color: #800000;">What's Happening:</h5>
+        <p>{{experimentInfo.explanation}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg active" data-dismiss="modal" style="background-color: #800000; border-color: #800000;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

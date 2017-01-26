@@ -23,29 +23,23 @@ let userID;
 // instantiate Express.js
 const shop = express();
 
-// // Tell Handlebars where to look for partials
-// hbs.registerPartials(__dirname +  '../views/partials');
-
-// // Set Handlebars as default templating engine
-// shop.set('view engine', 'hbs');
-
-// // points Express towars to views directory for easy rendering
-// shop.set('views', __dirname + './../views');
-
-// // Point shop towards stylesheets
-// shop.use(express.static(__dirname + './../public'));
-
-// // Allows for JSON-formatted POST requests
-// shop.use(bodyParser.json());
-
 // route for e-commerce site
 shop.get('/shop', (req, res) => {
   // generate random userID
   userID = uuid();
 
+
   // activate the Optimizely experiment
   let variation = optimizelyClient.activate("LANDING_PAGE_UI", userID);
   console.log(variation);
+
+  // this object contains information about the experiment (To be displayed in client-side modal)
+  let experimentInfo = {
+    name: 'LANDING_PAGE_UI',
+    hypothesis: 'Swapping out the banner image and the main call to action will increase conversions',
+    explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action',
+    variation: variation
+  }
 
   // decide which version of the UI to show based on the bucketed variation
   if (variation === 'variation_a') {
@@ -53,9 +47,7 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home.hbs', {
           productArray: products.slice(0,3),
-          variation,
-          // Explains what's happening in the experiment
-          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -65,9 +57,7 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home2.hbs', {
           productArray: products.slice(0,3),
-          variation,
-          // Explains what's happening in the experiment
-          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
@@ -77,18 +67,12 @@ shop.get('/shop', (req, res) => {
       .then((products) => {
         res.render('shop/home.hbs', {
           productArray: products.slice(0,3),
-          variation: 'not bucketed',
-          // Explains what's happening in the experiment
-          explanation: 'Based on which variation a user has been bucketed into, Optimizely is directing the site to serve up a different version of the homepage complete with a different banner image and call to action'
+          experimentInfo
         });
       }, (e) => {
         res.send('Could not retrieve products');
       });
   }
-
-  // Send conversion data back to Optimizely
-  optimizelyClient.track('sample_conversion', userID)
-
 });
 
 // route for retrieving product results
