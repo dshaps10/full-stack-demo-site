@@ -17,6 +17,9 @@ I would encourage anyone who wants to customize the site templates to match a sp
 ##Using the Demo Suite
 As of the most updated version of this ReadMe, there is no live, deployed version of this site (although this is in the plan for the future). For now, clone this repo, and run the site locally on your machine. the script, ```npm run server``` will run the site on ```localhost:3000```.
 
+##Understanding the Experiments
+Information about each experiment, including the experiment name, the variation into which the user has been bucketed, as well as what's actually being changed will be available to the client through the use of modals.  On each page where an experiment is running there will be a modal titled 'Experiment Info' which will toggle the modal when clicked.
+
 ##Technology Used
 This suite is built exclusively in Node.js.  This seemed a good choice given the ubiquity of JavaScript, but I would encourage you to port this to another language if you so choose.  I used MongoDB as a database, Mongoose as an ORM, and Handlebars as a templating engine.  For a full list of dependencies please see the ```package.json``` file.
 
