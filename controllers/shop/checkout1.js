@@ -18,6 +18,10 @@ let userID;
 // instantiate Express.js
 const checkout1 = express();
 
-checkout1.get('/', (req, res) => {
+checkout1.get('/shop/cart', (req, res) => {
     res.send('This is checkout version 1');
+});
+
+checkout1.get('/shop/checkout', (req, res) => {
+    res.send('This is the checkout page');
 });

@@ -25,6 +25,7 @@ const shop = express();
 
 // route for e-commerce site
 shop.get('/shop', (req, res) => {
+
   // generate random userID
   userID = uuid();
 
@@ -188,7 +189,7 @@ shop.get('/shop/products/:id', (req, res) => {
 // Dispatches conversion event back to Optimizely
 shop.post('/shop/products', (req, res) => {
   optimizelyClient.track('add_to_cart', userID)
-})
+});
 
 module.exports = {
   shop
