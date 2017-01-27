@@ -15,7 +15,9 @@ let {priceDiscount} = require('./../../helpers/price_discount');
 const media = express();
 
 media.get('/media', (req, res) => {
-    res.render('media/home.hbs');
+    res.render('media/home.hbs', {
+        pageTitle: 'Home'
+    });
 });
 
 module.exports = {
