@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 // import controllers
 let {shop} = require('./controllers/shop/shop');
 let {travel} = require('./controllers/travel');
+let {media} = require('./controllers/media/media');
 
 // instantiate Express.js
 const app = express();
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 // Express middleware enabling separate controllers
 app.use('/', shop);
 app.use('/', travel);
+app.use('/', media);
 
 // root route
 app.get('/', (req, res) => {
