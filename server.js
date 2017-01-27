@@ -4,7 +4,7 @@ const hbs = require('hbs');
 const bodyParser = require('body-parser');
 
 // import controllers
-let {shop} = require('./controllers/shop');
+let {shop} = require('./controllers/shop/shop');
 let {travel} = require('./controllers/travel');
 
 // instantiate Express.js
