@@ -7,7 +7,8 @@
     "test": "mocha server/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'",
     "shop-seed": "node helpers/shop-seed.js",
-    "travel-seed": "node helpers/travel-seed.js"
+    "travel-seed": "node helpers/travel-seed.js",
+    "media-seed": "node helpers/media-seed.js"
   },
   "repository": {
     "type": "git",
