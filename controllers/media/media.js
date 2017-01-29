@@ -7,17 +7,27 @@ const ObjectID = require('mongodb').ObjectID;
 
 // local packages
 let {mongoose} = require('./../../db/mongoose');
-let {Product} = require('./../../models/products');
+let {Article} = require('./../../models/articles');
 let {datafile} = require('./../../optly_shop_datafile');
 let {uuid} = require('./../../helpers/uuid');
-let {priceDiscount} = require('./../../helpers/price_discount');
 
 const media = express();
 
+// media.get('/media', (req, res) => {
+//     res.render('media/home.hbs', {
+//         pageTitle: 'Home'
+//     });
+// });
+
 media.get('/media', (req, res) => {
-    res.render('media/home.hbs', {
-        pageTitle: 'Home'
-    });
+    Article.find()
+        .then((articles) => {
+            res.render('media/home.hbs', {
+                articleArray: articles
+            });
+        }, (e) => {
+            res.send('Could not retrieve articles');
+        });
 });
 
 module.exports = {

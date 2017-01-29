@@ -1,5 +1,5 @@
 // local packages
-let {Article} = require('../models/products');
+let {Article} = require('../models/articles');
 let {mongoose} = require('../db/mongoose');
 
 let articles = [

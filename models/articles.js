@@ -7,19 +7,15 @@ let Article = mongoose.model('Article', {
     },
     title: {
         type: String,
-        required: true,
-        minlength: 5
     },
     body: {
         type: String,
-        required: true,
     },
     author: {
         type: String
     },
     category: {
         type: String,
-        required: true
     }
 });
 
