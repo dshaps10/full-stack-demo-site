@@ -34,16 +34,11 @@
 
 .sample {
 	display: inline-block;
-	padding-right: 10px;
 	color: #0081BA;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 40px;
 	height: 200px;
 	padding: 0px;
-}
-
-.sample-articles {
-	margin-top: 25px;
 }
 
 .sample-image {
