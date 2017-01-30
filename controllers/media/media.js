@@ -31,7 +31,7 @@ media.get('/media', (req, res) => {
             res.render('media/home.hbs', {
             	mainArticle: articles[0],
             	topStories: articles.slice(1, 4),
-                articleArray: articles.slice(5)
+                samples: articles.slice(5, 9)
             });
         }, (e) => {
             res.send('Could not retrieve articles');

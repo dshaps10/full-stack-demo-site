@@ -2,6 +2,10 @@
     font-family: Open Sans;
 }
 
+div {
+	border: 2px solid black;
+}
+
 @keyframes fadein {
     0% { opacity: 0; }
     25% { opacity: 0; }
@@ -26,4 +30,23 @@
 	font-size: 3em;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px black;
+}
+
+.sample {
+	display: inline-block;
+	padding-right: 10px;
+	transition: 0.4s background-color;
+	color: #0081BA;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.sample-articles {
+	margin-top: 25px;
+	height: 100px;
+}
+
+.top-stories {
+	list-style-type: none;
 }
