@@ -2,13 +2,28 @@
     font-family: Open Sans;
 }
 
-div {
-    border: 2px solid black;
-}
-
 @keyframes fadein {
     0% { opacity: 0; }
     25% { opacity: 0; }
     50% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+.headline {
+	height: 400px;
+	color: white;
+	transition: 0.4s opacity;
+}
+
+.headline:hover {
+	opacity: 0.9;
+}
+
+.main-title {
+	position: absolute;
+	bottom: 0;
+	left: 1;
+	font-size: 3em;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px black;
 }

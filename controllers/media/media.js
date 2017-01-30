@@ -11,6 +11,12 @@ let {Article} = require('./../../models/articles');
 let {datafile} = require('./../../optly_shop_datafile');
 let {uuid} = require('./../../helpers/uuid');
 
+// Grabs substring of headline article
+hbs.registerHelper('trimString', (passedString) => {
+    let theString = passedString.substring(0,150);
+    return new hbs.SafeString(theString)
+});
+
 const media = express();
 
 // media.get('/media', (req, res) => {
@@ -23,7 +29,9 @@ media.get('/media', (req, res) => {
     Article.find()
         .then((articles) => {
             res.render('media/home.hbs', {
-                articleArray: articles
+            	mainArticle: articles[0],
+            	topStories: articles.slice(1, 4),
+                articleArray: articles.slice(5)
             });
         }, (e) => {
             res.send('Could not retrieve articles');

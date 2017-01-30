@@ -15,18 +15,18 @@
                     <button type="button" class="btn btn-primary btn-sm active pull-right" style="background-color: #800000; border-color: #800000;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
                 </div>
             </div>
-        </nav>
+        </nav><br />
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <h3>{{articleArray}}</h3>
+                <div class="col-md-8 headline" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{mainArticle.img}}); background-size: cover;">
+                    <h3 class="main-title">{{mainArticle.title}}</h3>
                 </div>
                 <div class="col-md-4">
                     <p style="text-align: center;">Top Stories</p><hr />
                     <ul>
-                        <li>Link 1</li>
-                        <li>Link 2</li>
-                        <li>Link 3</li>
+                        {{#each topStories}}
+                        <li>{{title}}</li>
+                        {{/each}}
                     </ul>
                 </div>
             </div>
