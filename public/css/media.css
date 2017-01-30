@@ -13,6 +13,10 @@
     100% { opacity: 1; }
 }
 
+a {
+	color: #0081BA;	
+}
+
 .headline {
 	height: 400px;
 	color: white;
@@ -23,6 +27,10 @@
 	opacity: 0.9;
 }
 
+li {
+	padding-top: 5px;
+}
+
 .main-title {
 	position: absolute;
 	bottom: 0;
@@ -30,15 +38,24 @@
 	font-size: 3em;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px black;
+	color: white;
+}
+
+.main-title:hover {
+	color: #0081BA;
 }
 
 .sample {
 	display: inline-block;
 	color: #0081BA;
 	margin: auto;
-	margin-top: 40px;
+	margin-bottom: 60px;
 	height: 200px;
 	padding: 0px;
+}
+
+.sample-articles {
+	margin-top: 40px;
 }
 
 .sample-image {
@@ -47,9 +64,20 @@
 }
 
 .sample-title {
+	position: absolute;
+	left: 10px;
+	top: 10px;
 	color: white;
+}
+
+span {
+	color: #0081BA;
 }
 
 .top-stories {
 	list-style-type: none;
+}
+
+.title {
+	text-align: center;
 }

@@ -3,32 +3,37 @@
   {{> _mediaHead}}
     <body>
         <nav class="navbar  navbar-toggleable-md navbar-light bg-faded" style="background-color: black;">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button><br /><br />
             {{!-- <a class="navbar-brand" style="color: white;" href="../">«</a> --}}
-            <a class="nav-item nav-link active" href="#" style="color: #0081BA;">Home</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#" style="color: #0081BA;">Home</a>
                     <a class="nav-item nav-link" href="#" style="color: white;">News</a>
                     <a class="nav-item nav-link" href="#" style="color: white;">Politics</a>
                     <a class="nav-item nav-link" href="#" style="color: white;">Sports</a>
                     <a class="nav-item nav-link" href="#" style="color: white;">Life</a>
                     <a class="nav-item nav-link" href="#" style="color: white;">Tech</a>
+                    <button type="button" class="btn btn-primary btn-sm active pull-right" style="background-color: #0081BA; border-color: #0081BA;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-sm active pull-right" style="background-color: #0081BA; border-color: #0081BA;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
         </nav><br />
+        <div class="title">
+            <h1><b>The Daily <span>Optiverse<span></b></h1>
+        </div><br />
         <div class="container">
             <div class="row">
                 <div class="col-md-8 headline" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{mainArticle.img}}); background-size: cover;">
-                    <h3 class="main-title">{{mainArticle.title}}</h3>
+                    <a href="#">
+                        <h3 class="main-title">{{mainArticle.title}}</h3>
+                    </a>
                 </div>
                 <div class="col-md-4">
                     <p style="text-align: center;">Top Stories</p><hr />
                     <ul class="top-stories">
                         {{#each topStories}}
-                        <li>{{title}}</li>
+                        <li><a href="#">{{title}}</a></li>
                         {{/each}}
                     </ul>
                 </div>
@@ -40,9 +45,7 @@
                         <div class="sample-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{img}}); background-size: cover;">
                             <h3 class="sample-title">{{category}}</h3 >
                         </div>
-                        <a href="#">
-                            <p>{{title}}</p>
-                        </a>
+                        <a href="#">{{title}}</a>
                     </div>
                     {{/each}}
                 </div>                
