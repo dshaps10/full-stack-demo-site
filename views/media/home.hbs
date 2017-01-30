@@ -33,8 +33,9 @@
             <div class="sample-articles">
                 <div class="row">
                     {{#each samples}}
-                    <div class="col-md-2 col-sm-12 col-xs-12 sample">
-                        <h3>{{category}}</h3 >
+                    <div class="col-md-2 col-sm-12 col-xs-12 sample" style="background-image: url({{img}}); background-size: cover;">
+                        <h3 class="sample-title">{{category}}</h3 >
+                        <p>{{title}}</p>
                     </div>
                     {{/each}}
                 </div>                

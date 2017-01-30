@@ -2,9 +2,9 @@
     font-family: Open Sans;
 }
 
-div {
+/*div {
 	border: 2px solid black;
-}
+}*/
 
 @keyframes fadein {
     0% { opacity: 0; }
@@ -35,16 +35,18 @@ div {
 .sample {
 	display: inline-block;
 	padding-right: 10px;
-	transition: 0.4s background-color;
 	color: #0081BA;
-	border-radius: 10px;
 	margin: auto;
 	margin-top: 10px;
+	height: 200px;
 }
 
 .sample-articles {
 	margin-top: 25px;
-	height: 100px;
+}
+
+.sample-title {
+	color: white;
 }
 
 .top-stories {
