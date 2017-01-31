@@ -40,6 +40,7 @@ media.get('/media', (req, res) => {
     // Activate Optimizely experiment
     let variation = optimizelyClient.activate("SAMPLE_ARTICLE_EXPERIMENT", userID);
 
+    console.log(variation);
 
     if (variation === 'original') {
         Article.find().sort({"category": -1})
