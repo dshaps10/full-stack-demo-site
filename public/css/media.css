@@ -74,6 +74,11 @@ li {
 	color: white;
 }
 
+.social-glyph {
+	height: 50px;
+	margin: 10px;
+}
+
 span {
 	color: #0081BA;
 }
