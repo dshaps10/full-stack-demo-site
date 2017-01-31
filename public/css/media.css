@@ -17,6 +17,10 @@ a {
 	color: #0081BA;	
 }
 
+.form-search {
+	padding-top: 10px;
+}
+
 .headline {
 	height: 400px;
 	color: white;

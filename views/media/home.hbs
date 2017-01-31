@@ -18,6 +18,16 @@
                     <button type="button" class="btn btn-primary btn-sm active pull-right" style="background-color: #0081BA; border-color: #0081BA;" data-toggle="modal" data-target="#myModal">Experiment Info</button>
                 </div>
             </div>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12 col-sm-0">
+                    <input type="text" class="form-control input-lg" placeholder="Search articles" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-sm" type="button" style="background-color: #0081BA; border-color: #0081BA;">
+                            Search
+                        </button>
+                    </span>
+                </div>
+            </div>
         </nav><br />
         <div class="title">
             <h1><b>The Daily <span>Optiverse<span></b></h1>
@@ -30,7 +40,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <p style="text-align: center;">Top Stories</p><hr />
+                    <p style="text-align: center; font-size: 1.25em; font-weight: bold;">Top Stories</p><hr />
                     <ul class="top-stories">
                         {{#each topStories}}
                         <li><a href="#">{{title}}</a></li>
