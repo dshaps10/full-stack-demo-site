@@ -26,12 +26,12 @@ const media = express();
 // });
 
 media.get('/media', (req, res) => {
-    Article.find()
+    Article.find().sort({"category": -1})
         .then((articles) => {
             res.render('media/home.hbs', {
             	mainArticle: articles[0],
             	topStories: articles.slice(1, 7),
-                samples: articles.slice(8)
+                samples: articles.slice(8, 11)
             });
         }, (e) => {
             res.send('Could not retrieve articles');
