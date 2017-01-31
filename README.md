@@ -5,7 +5,7 @@ This site comprises a variety of "micro-site" that SEs, AEs, and Engineers at Op
 
 As of now, micro-sites included are:
 * E-Commerce - Addison & Boss
-* Travel - Paradiso Travel (half complete)
+* Media - The Daily Optiverse (partially complete)
 
 This Full Stack demo suite attempts to solve the inherent issues with giving real-time demos on Full Stack, namely that it is impossible to demo Full Stack on a customer site like you would with our client-side products.
 

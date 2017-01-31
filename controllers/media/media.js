@@ -8,8 +8,14 @@ const ObjectID = require('mongodb').ObjectID;
 // local packages
 let {mongoose} = require('./../../db/mongoose');
 let {Article} = require('./../../models/articles');
-let {datafile} = require('./../../optly_shop_datafile');
+let {datafile} = require('./../../optly_media_datafile');
+let {sampleArticleByCategory} = require('./../../helpers/sampleArticleByCategory');
 let {uuid} = require('./../../helpers/uuid');
+
+// Initialize the Optimizely client
+let optimizelyClient = optimizely.createInstance({
+    datafile: datafile
+});
 
 // Grabs substring of headline article
 hbs.registerHelper('trimString', (passedString) => {
